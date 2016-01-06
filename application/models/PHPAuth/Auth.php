@@ -426,14 +426,17 @@ class Auth
 
 	public function checkSession($hash)
 	{
+
 		$ip = $this->getIp();
 
         $block_status = $this->isBlocked();
         if ($block_status == "block") {
             $return['message'] = $this->lang["user_blocked"];
+
             return false;
         }
 		if (strlen($hash) != 40) {
+
 			return false;
 		}
 
@@ -441,6 +444,7 @@ class Auth
 		$query->execute(array($hash));
 
 		if ($query->rowCount() == 0) {
+
 			return false;
 		}
 
@@ -1341,6 +1345,8 @@ class Auth
 	*/
 
 	public function isLogged() {
+		echo'<pre>';
+		var_dump($_COOKIE);
 		return (isset($_COOKIE[$this->config->cookie_name]) && $this->checkSession($_COOKIE[$this->config->cookie_name]));
 
 	}

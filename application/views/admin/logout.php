@@ -9,21 +9,14 @@
     $auth   = new PHPAuth\Auth($dbh, $config);
 
 
-
-$email = "mbcsdskchamathssilva@gmail.com";
-$password = "cucsc@123!@#AB";
+    $email = "mbckchamathsilva@gmail.com";
+    $password = "ucsc@123!@#AB";
     $repeatpassword = "ucsc@123!@#A";
-    $remember = "1";
 
 
     echo '<pre>';
 
-    $result = $auth->login($email,$password,$remember);
-
-    //if login deatile correct create session
-    if (!$result['error']){
-        setcookie('authIDD',$result["hash"],$result["expire"],'/');
-    }
+    $result = $auth->logout($auth->getSessionHash());
     var_dump($result);
 
     echo '<br>';

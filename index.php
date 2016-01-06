@@ -69,12 +69,78 @@
 
 
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--jquery form -->
+    <script src="http://malsup.github.com/jquery.form.js"></script>
     <!--jquery validation -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    <!--UCSC Vidobay-->
+    <script src="assets/JS/validation.js"></script>
+
+
+    <script>
+
+
+
+        $("#login_form").validate({
+            rules:{
+                username:{
+                    required: true
+
+                },
+                password: {
+                    required: true
+                }
+            }
+        });
+
+
+        function testSubmit(){
+            $('#login_form').ajaxSubmit({
+                beforeSubmit:  beforeSubmit,
+                success: function(data) {
+                    var obj = jQuery.parseJSON( data);
+
+                    if (obj.typee == 1){
+                        $("#feedback").hide().html(obj.resultt).slideDown("slow");
+                    }else{
+                        document.getElementById("login_form").reset();
+                        window.location.replace(obj.resultt);
+                    }
+
+
+                    //window.location.replace(data[2]);
+
+                    //alert("Thank you for your comment!" + data);
+                    //$('#feedback').html(data);
+
+
+                    //;
+
+                }
+
+            });
+            return false;
+
+         function beforeSubmit(){
+                if (!$('#login_form').valid()) {
+                    //alert("form is invalid");
+                    return false
+                }
+                //alert("form is valid");
+            }
+
+        }
+
+    </script>
+
+
+
+
 
 
 

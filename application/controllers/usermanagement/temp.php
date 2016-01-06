@@ -5,10 +5,13 @@
  * Date: 1/6/16
  * Time: 3:45 PM
  */
+$output = json_encode(array("type" => 1, "url" => 'xx'));
 
+echo $output;
 
 
 ?>
+
 
 <html>
 <head>
