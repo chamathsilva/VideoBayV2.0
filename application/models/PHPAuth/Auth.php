@@ -441,7 +441,6 @@ class Auth
 		$query->execute(array($hash));
 
 		if ($query->rowCount() == 0) {
-			echo "test1";
 			return false;
 		}
 
@@ -457,13 +456,10 @@ class Auth
 
 		if ($currentdate > $expiredate) {
 			$this->deleteExistingSessions($uid);
-			echo "test Time";
-
 			return false;
 		}
 
 		if ($ip != $db_ip) {
-			echo "test2";
 			return false;
 		}
 
