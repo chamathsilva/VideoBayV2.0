@@ -1,0 +1,104 @@
+body {
+    background-color:  #525453;
+    height: 100%;
+}
+
+.wrapper {
+    min-height:100%;
+    position:relative;
+}
+
+.inner-bg {
+    padding: 0px 0 20px 0;
+    background-color: #525453;
+    min-height:100%;
+}
+.top-content{
+    margin: 0 auto;
+}
+.top-content .text {
+    padding-top: 0px;
+    text-align: center;
+    color: #fff;
+}
+.top-content .text h1 { color: #fff; }
+.top-content .text p { text-align: center;}
+
+.top-content .description {
+    margin: 20px 0 10px 0;
+    opacity: 0.8;
+
+
+}
+
+.show-video{
+    -webkit-appearance: none;
+    border: none;
+    background: transparent url("../../images/icon_watch.png") no-repeat 50% 2px;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 90px;
+    margin-top: 10px;
+    text-transform: uppercase;
+
+
+}
+
+.show-video:hover{
+    background-image:url("../../images/icon_watch-active.png");
+}
+
+
+
+/* index gallary*/
+.gallarycontent{
+    padding-top: 10px;
+}
+.text2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px
+}
+
+
+/*----------nav bar----------------------------*/
+
+/*bacckground color of nav bar*/
+.navbar-inverse {
+    background-color: #0f64f2;
+    border-color: #0f64f2;
+}
+/* inner textcolor*/
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+/* toogle colors*/
+.navbar-inverse .navbar-toggle {
+    border-color: skyblue;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(8, 101, 188, 0.90);
+}
+
+.navbar-inverse .side-nav > li > a:focus {
+    color: #fff;
+    background-color: rgba(28, 114, 255, 0.29);
+    boder-radius: 5px ;
+}
+
+.navbar-collapse  .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #55bdff;
+    color: #ffffff;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background: #3695ff !important;
+    color: rgba(255, 255, 255, 0.89) !important;
+}
+
+.navbar-inverse .navbar-header .navbar-brand {
+    color: #ffffff;
+}
+
+
