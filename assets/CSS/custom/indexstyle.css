@@ -1,7 +1,7 @@
 body {
     background-color:  #525453;
     height: 100%;
-    font-family: Helvetica;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
@@ -10,7 +10,7 @@ body {
 }
 
 .inner-bg {
-    padding: 0px 0 20px 0;
+    padding: 10px 0 20px 0;
     background-color: #525453;
     min-height:100%;
 }
@@ -26,10 +26,38 @@ body {
 .top-content .text p { text-align: center;}
 
 .top-content .description {
-    margin: 20px 0 10px 0;
+    margin: 30px 0 10px 0;
     opacity: 0.8;
 
+}
+.form-top {
+overflow: hidden;
+    padding: 0 25px 0px 25px;
+    background: #02a2f2;
+    -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+    text-align: left;
+}
 
+.form-top-left {
+float: left;
+    width: 75%;
+    padding-top: 25px;
+}
+.form-top-left h3 { margin-top: 0; }
+.form-top-right {
+float: left;
+    width: 25%;
+    padding-top: 5px;
+    font-size: 66px;
+    color: #ddd;
+    line-height: 100px;
+    text-align: right;
+}
+.form-bottom {
+padding: 25px 25px 20px 25px;
+    background: #eee;
+    -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+    text-align: left;
 }
 
 .show-video{
@@ -60,6 +88,14 @@ body {
     text-align: center;
     margin-bottom: 50px
 }
+
+
+.text3{
+    color: #fff;
+    text-align: center;
+}
+
+
 .error{
     color: #ff3922;
     text-align: center;
@@ -104,5 +140,33 @@ body {
 }
 
 .navbar-inverse .navbar-header .navbar-brand {
+    color: #ffffff;
+}
+
+
+.panel-default > .panel-heading {
+    background-color: #00afff;
+}
+
+
+.regcontent{
+    margin: 0 auto;
+}
+
+
+.thumbnail {
+    box-shadow: 5px 5px 20px grey;
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1;
+    background-color: rgba(255, 255, 255,0.8);
+    border-color: rgba(255, 255, 255, 0) ;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.thumbnail >.a{
     color: #ffffff;
 }

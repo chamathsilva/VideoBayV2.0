@@ -15,52 +15,76 @@
     <!--Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../assets/CSS/custom/indexstyle.css">
-    <style type="text/css">
-        body {
-            background-color:#525453;
-
-        }
-        .pad-top {
-            padding-top:70px;
-        }
-        .panel-set {
-            border-radius:0px;
-        }
-    </style>
 </head>
 <body>
-<?php include '../includes/navbarindex.php' ?>
+<div class="wrapper">
 
-<div class="row " style="padding-top: 50px;">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-info panel-set pcolor">
-            <div class="panel-heading">
-                Enter Details to Register
-            </div>
-            <div class="panel-body">
-                <label>Enter Your Name</label>
-                <input type="text" class="form-control" >
-                <label>Enter Your Email</label>
-                <input type="text" class="form-control" >
-                <label>Enter Password </label>
-                <input type="password" class="form-control" >
-                <label>Re-Enter Password </label>
-                <input type="password" class="form-control" >
-                <hr />
+<?php include '../includes/navbarreg.php' ?>
 
-                <a href="#" class="btn btn-success">Sign Up Now ! </a>
+    <div clas="regcontent">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>Sign up now</h3>
+                        <p>Fill in the form below to get instant access:</p>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <form id = "register-form" role="form" action="" method="post" class="registration-form">
 
-                <hr />
-                Please fill all above fields carefully to register / sign up.
+                        <div class="form-group">
+                            <label class="sr-only" for="form-first-name">First name</label>
+                            <input type="text" name="First_Name" id="First_Name" placeholder="First name..." class="form-first-name form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="form-last-name">Last name</label>
+                            <input type="text" name="Last_Name" id="Last_Name" placeholder="Last name..." class="form-last-name form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-first-name">User name</label>
+                            <input type="text" name="regUser_Name" id="regUser_Name" placeholder="User name..." class="form-first-name form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="form-email">Email</label>
+                            <input type="text" name="E_mail" id="E_mail" placeholder="Email..." class="form-email form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="form-email">Email</label>
+                            <input type="password" name="regPassword" id="Password" placeholder="password..." class="form-email form-control" id="regpassword">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="form-email">Email</label>
+                            <input type="password" name="password_again" id="password_again" placeholder="password again..." class="form-email form-control" >
+                        </div>
+                        <!--<input type="hidden" name="token" value="<?php// echo Token::generate();?>" >-->
+
+                        <div class="form-group">
+                            <label>
+                                <input id="terms" name="terms" type="checkbox">
+                                I have read,constat and agree ....
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign up!</button>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
 
 
             </div>
         </div>
     </div>
-</div>
 <!-- ROW END -->
-
 </div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
