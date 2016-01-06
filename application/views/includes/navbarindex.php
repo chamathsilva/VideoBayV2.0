@@ -26,7 +26,8 @@
                     <li><a href="#">Sign up</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-                        <div class="dropdown-menu" style="padding: 15px; padding-bottom:  0px;">
+                        <div class="dropdown-menu ddmenu" style="padding: 15px; padding-bottom:  0px;">
+                            <div class="error">error password</div>
                             <form method="post" action="login" accept-charset="UTF-8">
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
                                 <input style="margin-bottom: 15px;" type="password" placeholder="password" id="password" name="password">
