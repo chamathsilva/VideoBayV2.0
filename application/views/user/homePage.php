@@ -31,7 +31,7 @@
 
 
 
-<a href="../../controllers/usermanagement/logout.php">Logo out</a>
+<a href="logout.php">Logo out</a>
 </body>
 
 </html>

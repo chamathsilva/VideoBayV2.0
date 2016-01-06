@@ -127,6 +127,8 @@
                 success: function(data) {
                     var obj = jQuery.parseJSON( data);
 
+                    //json eke enne typee kiyana ekekn error ekak da nadda kiyana eka
+
                     if (obj.typee == 1){
                         $("#feedback").hide().html(obj.resultt).slideDown("slow");
                     }else{

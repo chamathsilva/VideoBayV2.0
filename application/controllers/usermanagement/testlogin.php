@@ -3,7 +3,9 @@
 if (isset($_POST["username"]) && isset($_POST["password"])){
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
-        die('Sorry Request must be Ajax POST');     //exit script outputting json data
+        //exit script outputting json data
+        $output = json_encode(array("typee" => 1, "resultt" => 'Sorry Request must be Ajax POST'));
+        Die($output);
     }
 
     // Data base connetion and Auth class
@@ -35,7 +37,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     Die($output);
 
 }else{
-    Die('Something wrong Try again later');
+    $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong Try again later'));
+    Die($output);
 }
 
 
