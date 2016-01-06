@@ -45,31 +45,58 @@
                     <div class="col-sm-2"></div>
                 </div>
             </div>
+
             <div class="gallarycontent">
                 <div class="container">
                     <div class="row row-centered">
                         <div class="col-md-12 text2">
                             <h1 >Gallery</h1>
-                            <div id="results"></div>
-                        </div>
-                        <div class="col-md-12 " style="text-align: center">
-                            <div class="pagination" ></div>
+                            <div id="results">
+                                <div class="col-lg-3 col-md-4 col-xs-6">
+                                    <a class="thumbnail" href="#">
+                                        <img class="img-responsive" src="assets/images/1.JPG" alt="">
+                                        <h4>Bubble sort</h4>
+                                        <h6 >basic configurations</h6>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6">
+                                    <a class="thumbnail" href="#">
+                                        <img class="img-responsive" src="assets/images/2.JPG" alt="">
+                                        <h4>dijustra algorithm</h4>
+                                        <h6 >basic configurations</h6>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6">
+                                    <a class="thumbnail" href="#">
+                                        <img  class="img-responsive"  src="assets/images/3.JPG" alt="">
+                                        <h4 >IP configuration</h4>
+                                        <h6 >basic configurations</h6>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6">
+                                    <a class="thumbnail" href="#">
+                                        <img class="img-responsive" src="assets/images/4.JPG" alt="">
+                                        <h4>mySQL</h4>
+                                        <h6 >basic configurations</h6>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
+
+
+
+
+
 </div>
-
-
-
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--jquery validation -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
