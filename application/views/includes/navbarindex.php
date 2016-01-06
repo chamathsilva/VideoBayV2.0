@@ -26,7 +26,7 @@
                     <li><a href="application/views/user/registration.php">Sign up</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
-                        <div class="dropdown-menu col" style="padding: 15px; padding-bottom: 0px;">
+                        <form class="dropdown-menu " style="padding: 15px; padding-bottom: 0px;">
                             <div class="error">error password</div>
                             <div>
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
@@ -43,7 +43,7 @@
                             </div>
 
 
-                        </div>
+                        </form>
 
                     </li>
 
