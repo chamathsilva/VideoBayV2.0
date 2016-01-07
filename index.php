@@ -2,17 +2,16 @@
 
 //FUNCTION HADANNA DB EKEN MEWA GANNA PULUWAN VENNA
 
-$item_per_page = 4; //need to put this configuration file
-require("application/models/DB/Db.class.php");
-$db = new Db();
-$get_total_rows = 0;
+    $item_per_page = 4; //need to put this configuration file
+    require("application/models/DB/Db.class.php");
+    $db = new Db();
+    $get_total_rows = 0;
 
-$lessons = $db->query("SELECT COUNT(*) FROM lesson");
+    $lessons = $db->query("SELECT COUNT(*) FROM lesson");
 
-$get_total_rows = $lessons[0]["COUNT(*)"];
-//break total records into pages
-$total_pages = ceil($get_total_rows/$item_per_page);
-
+    $get_total_rows = $lessons[0]["COUNT(*)"];
+    //break total records into pages
+    $total_pages = ceil($get_total_rows/$item_per_page);
 
 ?>
 
@@ -20,8 +19,6 @@ $total_pages = ceil($get_total_rows/$item_per_page);
 
 <head>
     <title> </title>
-
-
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!-- Latest compiled and minified CSS -->
@@ -185,24 +182,9 @@ $total_pages = ceil($get_total_rows/$item_per_page);
     </script>
     <!--end of login -->
 
-    <script type="text/javascript">
-            $(document).ready(function() {
-                //load more buttuon passe add karanne
-
-
-
-
-
-
-            });
-
-    </script>
-
 
     <script type="text/javascript">
         $(document).ready(function() {
-
-
 
             var track_click = 0; //track user click on "load more" button, righ now it is 0 click
 
@@ -211,7 +193,6 @@ $total_pages = ceil($get_total_rows/$item_per_page);
 
             //show load more button
             $("#loadmore").html('<div align="center"><button class="load_more" id="load_more_button">load More</button> <div class="animation_image" style="display:none;"><img src="assets/images/ajax-loader.gif"> Loading...</div> </div>');
-
 
 
             $(".load_more").click(function (e) { //user clicks on button
