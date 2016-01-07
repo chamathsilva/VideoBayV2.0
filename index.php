@@ -1,5 +1,19 @@
 <?php
 
+//FUNCTION HADANNA DB EKEN MEWA GANNA PULUWAN VENNA
+
+$item_per_page = 4; //need to put this configuration file
+require("application/models/DB/Db.class.php");
+$db = new Db();
+$get_total_rows = 0;
+
+$lessons = $db->query("SELECT COUNT(*) FROM lesson");
+
+$get_total_rows = $lessons[0]["COUNT(*)"];
+//break total records into pages
+$total_pages = ceil($get_total_rows/$item_per_page);
+
+
 ?>
 
 <html>
@@ -52,6 +66,9 @@
                         <div class="col-md-12 text2">
                             <h1 >Gallery</h1>
                             <div id="results">
+
+                                <img src="assets/images/ajax-loader.gif">  Loading...
+                                <!--
                                 <div class="col-lg-3 col-md-4 col-xs-6">
                                     <a class="thumbnail" href="#">
                                         <img class="img-responsive" src="assets/images/1.JPG" alt="">
@@ -59,6 +76,7 @@
                                         <h6 >basic configurations</h6>
                                     </a>
                                 </div>
+
                                 <div class="col-lg-3 col-md-4 col-xs-6">
                                     <a class="thumbnail" href="#">
                                         <img class="img-responsive" src="assets/images/2.JPG" alt="">
@@ -80,9 +98,16 @@
                                         <h6 >basic configurations</h6>
                                     </a>
                                 </div>
-                            </div>
 
-                        </div>
+                                -->
+
+
+
+
+                            </div> <!--end of result div -->
+
+                            <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;">
+                            </div>
                     </div>
                 </div>
             </div>
@@ -103,7 +128,7 @@
     <!--UCSC Vidobay-->
     <script src="assets/JS/validation.js"></script>
 
-
+    <!--login script-->
     <script>
 
 
@@ -120,7 +145,6 @@
             }
         });
 
-
         function testSubmit(){
             $('#login_form').ajaxSubmit({
                 beforeSubmit:  beforeSubmit,
@@ -136,12 +160,10 @@
                         window.location.replace(obj.resultt);
                     }
 
-
                     //window.location.replace(data[2]);
 
                     //alert("Thank you for your comment!" + data);
                     //$('#feedback').html(data);
-
 
                     //;
 
@@ -161,8 +183,79 @@
         }
 
     </script>
+    <!--end of login -->
+
+    <script type="text/javascript">
+            $(document).ready(function() {
+                //load more buttuon passe add karanne
 
 
+
+
+
+
+            });
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+
+            var track_click = 0; //track user click on "load more" button, righ now it is 0 click
+
+            var total_pages = <?php echo $total_pages; ?>;
+            $('#results').load("application/controllers/fetchLessons/fetchLessonsForIndex.php", {'page':track_click}, function() {track_click++;}); //initial data to load
+
+            //show load more button
+            $("#loadmore").html('<div align="center"><button class="load_more" id="load_more_button">load More</button> <div class="animation_image" style="display:none;"><img src="assets/images/ajax-loader.gif"> Loading...</div> </div>');
+
+
+
+            $(".load_more").click(function (e) { //user clicks on button
+
+                $(this).hide(); //hide load more button on click
+                $('.animation_image').show(); //show loading image
+
+                if(track_click <= total_pages) //make sure user clicks are still less than total pages
+                {
+                    //post page number and load returned data into result element
+                    $.post('application/controllers/fetchLessons/fetchLessonsForIndex.php',{'page': track_click}, function(data) {
+
+                        $(".load_more").show(); //bring back load more button
+
+                        $("#results").append(data); //append data received from server
+
+                        //scroll page to button element
+                        $("html, body").animate({scrollTop: $("#load_more_button").offset().top},1000);
+
+                        //hide loading image
+                        $('.animation_image').hide(); //hide loading image once data is received
+
+                        track_click++; //user click increment on load button
+
+                    }).fail(function(xhr, ajaxOptions, thrownError) {
+                        alert(thrownError); //alert any HTTP error
+                        $(".load_more").show(); //bring back load more button
+                        $('.animation_image').hide(); //hide loading image once data is received
+                    });
+
+
+                    if(track_click >= total_pages-1)
+                    {
+                        //reached end of the page yet? disable load button
+                        $(".load_more").attr("disabled", "disabled");
+                        $(".load_more").html("<div class='all_loaded'>No More Content to Load</div>");
+
+                    }
+
+                }
+
+            });
+        });
+    </script>
 
 
 
