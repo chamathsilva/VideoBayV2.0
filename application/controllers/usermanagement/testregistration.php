@@ -26,12 +26,13 @@ $key = ($_POST['g-recaptcha-response']);
 
 
 
-$params = array("A" => "apple","B" => "orange", "C" => "how");
+$params = array("firstName" => "$firstname","Lastname" => "$lastname", "username" => "$username","type" => '1');
 
 $result= $auth->register($email,$password,$passwordconform ,$params);
 
 
 if ($result['error']){
+    // if registration not complete
     $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
 }else{
     $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));

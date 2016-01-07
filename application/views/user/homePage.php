@@ -28,6 +28,22 @@
 <head></head>
 <body>
 
+<h1>GENARAL</h1>
+
+<?php
+
+$uid = $auth->getSessionUID($auth->getSessionHash());
+$result = $auth->getUser($uid);
+
+
+echo '<pre>';
+
+var_dump($result);
+
+echo '<br>';
+
+
+?>
 
 
 

@@ -31,13 +31,33 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
     }else{
         setcookie('authIDD',$result["hash"],$result["expire"],'/');
-        $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
-    }
+        $uid = $auth->getSessionUID($result["hash"]);
+        $result = $auth->getUser($uid);
+        $type = $result['type'];
 
+        //  99 - admin
+        //  1 - general user
+        //  2 - ucsc user
+        //  3 - bit user
+
+        if ($type == 99){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/admin.php'));
+        }elseif($type == 1){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
+        }elseif($type == 2){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/ucsc.php'));
+        }elseif($type == 3){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/bit.php'));
+        }else{
+            // somthing wrong #2
+            $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong #2'));
+        }
+    }
     Die($output);
 
 }else{
-    $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong Try again later'));
+    // somthing wrong #1
+    $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong Try again later #1'));
     Die($output);
 }
 
