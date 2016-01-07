@@ -69,6 +69,8 @@
         feedback.load("../../models/fetch_feedback.php");
     }
 
+    //Navigation bar click funtion load relevent page via ajax
+
     function loadPublishlessons(){
         adminLoaddiv.empty();
         adminLoaddiv.prepend('<img style="margin-left:50%;" src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
@@ -97,6 +99,12 @@
         adminLoaddiv.empty();
         adminLoaddiv.prepend('<img style="margin-left:50%;" src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
         adminLoaddiv.load("adminDashboard.php");
+    }
+
+    function loadmasseges(){
+        adminLoaddiv.empty();
+        adminLoaddiv.prepend('<img style="margin-left:50%;" src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        adminLoaddiv.load("viewMasseges.php");
     }
 
 </script>

@@ -83,6 +83,10 @@
                 <a onclick="loadmanageLessons()"><i class="fa fa-fw fa-edit"></i>Manage lessons</a>
             </li>
 
+            <li>
+                <a onclick="loadmasseges()"><i class="fa fa-fw fa-edit"></i>Messages</a>
+            </li>
+
         </ul>
 
 
