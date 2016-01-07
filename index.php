@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/CSS/custom/indexstyle.css">
 
+    <!--color box -->
+    <link rel="stylesheet" href="assets/CSS/colorbox.css">
 
 
 </head>
@@ -47,7 +49,12 @@
                                 for the students and lecturers and it also creates
                                 a virtual bridge to link students and lectures.
                             </p>
-                            <button class="show-video" href="../../data/IEEE-R10-Video-trailler.mp4">Watch the Video</button>
+
+
+                            <a class="videoBay" href="data/IEEE-R10-Video-trailler.mp4" title= "VidoBay demo">
+                                <button class="show-video" href="data/IEEE-R10-Video-trailler.mp4">Watch the Video</button>
+                            </a>
+
 
 
 
@@ -121,6 +128,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+    <!--color box -->
+    <script src="assets/JS/jquery.colorbox-min.js"></script>
 
     <!--UCSC Vidobay-->
     <script src="assets/JS/validation.js"></script>
@@ -238,13 +247,16 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function(){
 
-
-
+            $(".videoBay").colorbox({iframe:true, innerWidth:640, innerHeight:360});
+        });
+    </script>
 
 </body>
 
 
-<html>
+</html>
 
 
