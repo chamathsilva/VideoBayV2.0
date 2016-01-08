@@ -12,15 +12,17 @@
     </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" >About</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="about.php" >About</a></li>
+                    <li><a href="help.php">Help</a></li>
                     <li><a href="application/views/user/registration.php">Sign up</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
+
                         <div class="dropdown-menu" style="padding: 15px; padding-bottom:  0px;">
                             <div  id ="feedback" class="error"></div>
 
                             <form  role="form" id="login_form" action="application/controllers/usermanagement/testlogin.php" method="post"  accept-charset="UTF-8">
+
 
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
                                 <input style="margin-bottom: 15px;" type="password" placeholder="password" id="password" name="password">
@@ -29,8 +31,6 @@
                                 <label class="string optional" for="user_remember_me">Remember me</label>
                                 <input class="btn btn btn-success" onclick="testSubmit()" type="button" id="sign-in" value="Sign In">
                             </form>
-
-
 
 
                         </div>

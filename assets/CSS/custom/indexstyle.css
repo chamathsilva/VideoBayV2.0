@@ -81,22 +81,27 @@ padding: 25px 25px 20px 25px;
 
 /* index gallary*/
 .gallarycontent{
-    padding-top: 10px;
+    padding-top: 0px;
 }
+
 .text2{
     color: #fff;
     text-align: center;
-    margin-bottom: 50px
-}
+    margin-bottom: 50px;
 
+}
+.text2 > h1{
+    padding-bottom: 15px;
+}
 
 .text3{
     color: #fff;
+    padding: 0px;
     text-align: center;
 }
 
 
-.error{
+.feederror{
     color: #ff3922;
     text-align: center;
     margin-bottom: 10px
@@ -143,6 +148,7 @@ padding: 25px 25px 20px 25px;
     color: #ffffff;
 }
 
+/*-----------------------------------------*/
 
 .panel-default > .panel-heading {
     background-color: #00afff;
@@ -152,7 +158,6 @@ padding: 25px 25px 20px 25px;
 .regcontent{
     margin: 0 auto;
 }
-
 
 .thumbnail {
     box-shadow: 5px 5px 20px grey;
@@ -171,3 +176,14 @@ padding: 25px 25px 20px 25px;
     color: #ffffff;
 }
 
+.detail-panal {
+    padding: 1px 1px 1px 4px;
+    background: #fff;
+    -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+    text-align: left;
+}
+.lesson-topic{
+    font-size: 20px;
+    padding-top: 12px;
+
+}

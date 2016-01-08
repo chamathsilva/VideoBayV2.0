@@ -20,7 +20,13 @@
 <html>
 
 <head>
-    <title> </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>UCSC Video Bay</title>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <!-- Latest compiled and minified CSS -->
@@ -36,6 +42,7 @@
 </head>
 
 <body>
+
 <div class="wrapper">
 <?php include 'application/views/includes/navbarindex.php' ?>
     <div class="top-content">
@@ -60,11 +67,11 @@
 
 
 
+                            </div>
                         </div>
+                        <div class="col-sm-2"></div>
                     </div>
-                    <div class="col-sm-2"></div>
                 </div>
-            </div>
 
             <div class="gallarycontent">
                 <div class="container">
@@ -119,7 +126,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -134,7 +140,7 @@
     <script src="assets/JS/jquery.colorbox-min.js"></script>
 
     <!--UCSC Vidobay-->
-    <script src="assets/JS/validation.js"></script>
+    <script src="assets/js/validation.js"></script>
 
     <!--login script-->
     <script>

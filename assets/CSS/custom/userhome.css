@@ -1,0 +1,46 @@
+body {
+    background-color:  #525453;
+    height: 100%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+.wrapper {
+    min-height:100%;
+    position:relative;
+}
+.navbar-inverse {
+    background-color: #3B5999;
+    border-color: #3B5999;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: skyblue;
+}
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #3B5999;
+}
+
+.recent{
+    background-color: rgba(82, 84, 83, 0.11);
+    border-radius: 5px;
+    align-items: center;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+#recentLesson{
+    align-content: center;
+    padding-left: 75px;
+}

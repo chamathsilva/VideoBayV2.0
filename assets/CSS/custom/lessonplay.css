@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(82, 84, 83, 0.55);
+    height: 100%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+}
+html{
+    height: 100%;
+}
+
+.wrapper {
+    min-height:100%;
+    position:relative;
+}
+.navbar-inverse {
+    background-color: #02a2f2;
+    border-color: #0196f2;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: skyblue;
+}
+.navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(8, 101, 188, 0.90);
+}
+
+.recent{
+    background-color: rgba(82, 84, 83, 0.11);
+    border-radius: 5px
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
