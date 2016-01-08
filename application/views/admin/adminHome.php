@@ -17,6 +17,10 @@
     <!--data table CSS -->
     <link rel="stylesheet" href="../../../assets/dataTable/css/jquery.dataTables.css">
 
+    <!--circle load -->
+
+    <link rel="stylesheet" href="../../../assets/CSS/percircle.css">
+
 
 
 
@@ -45,6 +49,31 @@
                         <li><a href="update.php"> Update details</a></li>
                         <li><a href="changepassword.php">Change password</a></li>
                     </ul>
+
+
+
+                    <div class="clearfix">
+                        <div id="pinkcircle" data-text="work" data-percent="65" class="red "></div>
+                        <div id="bluecircle" data-text="rest" data-percent="87" class="purple"></div>
+                        <div id="bluecircle" data-text="play" data-percent="30" class=" blue"></div>
+                        <div id="clock" class="purple "></div>
+                    </div>
+                    <!-- /custom text  -->
+
+                    <!--
+                    <h2>Dark theme</h2>
+                    <div class="dark-area clearfix">
+                        <div class="clearfix">
+                            <div id="lightcircle" data-percent="77" class="dark big"></div>
+                            <div id="dgreencircle" data-percent="50" class="dark blue"></div>
+                            <div id="sacircle" data-percent="33" class="dark small pink"></div>
+                        </div>
+                    </div>
+
+                    -->
+
+
+
                 </div>
             </div>
 
@@ -52,6 +81,11 @@
     </div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- circle load -->
+<script type="text/javascript" src="../../../assets/JS/percircle.js"></script>
+
+
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="../../../assets/JS/bootstrap-notify.min.js"></script>
 <script src="../../../assets/dataTable/js/jquery.dataTables.js"></script>
@@ -66,7 +100,7 @@
         var feedback = $("#feedback_dropdown");
         feedback.empty();
         feedback.prepend('<li class="message-footer"><img style="margin-left:30px;" src="../../../assets/images/ajax-loader.gif" /> Loading...</div></li>');
-        feedback.load("../../models/fetch_feedback.php");
+        feedback.load("../../controllers/massegesmanagement/fetch_feedback.php");
     }
 
     //Navigation bar click funtion load relevent page via ajax
@@ -107,6 +141,23 @@
         adminLoaddiv.load("viewMasseges.php");
     }
 
+</script>
+
+
+
+<script type="text/javascript">
+    $(function(){
+        $("[id$='circle']").percircle();
+
+        $("#clock").percircle({
+            perclock: true
+        });
+
+        $("#custom").percircle({
+            text:"custom",
+            percent: 27
+        });
+    });
 </script>
 
 

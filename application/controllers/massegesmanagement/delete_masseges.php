@@ -20,7 +20,7 @@ if($_POST)
     $id	= filter_var($_POST["id"], FILTER_SANITIZE_STRING);
 
 
-    $result=  $db->query("DELETE FROM lesson WHERE lesson_id = :lid ",array("lid"=>$id));
+    $result=  $db->query("DELETE FROM feedback WHERE id = :mid ",array("mid"=>$id));
 
 
 

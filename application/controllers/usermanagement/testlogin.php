@@ -26,6 +26,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
     $result = $auth->login($email,$password,$remember);
 
+    // 1 - error
+    // 0 - ok
 
     if ($result['error']){
         $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
