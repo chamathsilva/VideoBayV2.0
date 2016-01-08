@@ -1,45 +1,76 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Smalkakulage
- * Date: 1/7/16
- * Time: 1:50 AM
- */
-?>
+<div class="navbar navbar-blue navbar-static-top">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="userhome.php" class="navbar-brand logo">vb</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
 
+        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
 
+                <form class="navbar-form navbar-left" id = "search-form">
+                    <div class="input-group input-group-sm" id = "search-form" >
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button id="serchbut" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            <li>
+                <a href="userhome.php"><i class="glyphicon glyphicon-home"></i> Home</a>
+            </li>
+            <li>
+                <a  data-toggle="modal" data-target="#myModalrequest"><i class="glyphicon glyphicon-plus"></i>requset</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="settings_new.php">Settings</a></li>
+                    <li><a href="logout.php">Sign Out</a></li>
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
+<!-- /top nav -->
+<!---------->
 
-        <div class="navbar-collapse collapse" id="navbar-collapsible">
+<!--Request  Modal -->
+<div class="modal fade" id="myModalrequest" tabindex="-1" role="dialog" aria-labelledby="myModalrequest">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalrequest">Request form</h4>
+            </div>
+            <div class="modal-body">
 
-            <div class="navbar-form navbar-right btn-group">
-                <button type="button" class="btn btn-default">Button 1</button>
-                <button type="button" class="btn btn-default">Button 2</button>
-                <button type="button" class="btn btn-default">Button 3</button>
+                <form class=""  id="request_form" action = "" method = "POST" >
+
+                    <div class = "form-group">
+                        <label for="offername">Topic</label>
+                        <input type = "text" id = "topic" name = "topic" class="form-control" placeholder="Topic" />
+                    </div>
+
+                    <div class = "form-group">
+                        <label for="address">commnent</label>
+                        <textarea type = "textarea" rows="5"   id = "comment" name = "comment" class="form-control"  placeholder = "comment"></textarea>
+                    </div>
+
+                    <button type="submit" id="send_request"  style="display:none;"></button>
+                </form>
             </div>
 
-            <form class="navbar-form navbar-right">
-                <div class="form-group" style="display:inline;">
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                    </div>
-                </div>
-            </form>
-
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                <button type="submit"   onclick="send_request()" class="btn btn-primary" ">send</button>
+            </div>
         </div>
-
     </div>
-</nav>
+</div>

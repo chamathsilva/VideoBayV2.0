@@ -3,7 +3,9 @@
 if (isset($_POST["username"]) && isset($_POST["password"])){
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
-        die('Sorry Request must be Ajax POST');     //exit script outputting json data
+        //exit script outputting json data
+        $output = json_encode(array("typee" => 1, "resultt" => 'Sorry Request must be Ajax POST'));
+        Die($output);
     }
 
     // Data base connetion and Auth class
@@ -24,18 +26,41 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
     $result = $auth->login($email,$password,$remember);
 
+    // 1 - error
+    // 0 - ok
 
     if ($result['error']){
         $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
     }else{
         setcookie('authIDD',$result["hash"],$result["expire"],'/');
-        $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
-    }
+        $uid = $auth->getSessionUID($result["hash"]);
+        $result = $auth->getUser($uid);
+        $type = $result['type'];
 
+        //  99 - admin
+        //  1 - general user
+        //  2 - ucsc user
+        //  3 - bit user
+
+        if ($type == 99){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/admin.php'));
+        }elseif($type == 1){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
+        }elseif($type == 2){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/ucsc.php'));
+        }elseif($type == 3){
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/bit.php'));
+        }else{
+            // somthing wrong #2
+            $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong #2'));
+        }
+    }
     Die($output);
 
 }else{
-    Die('Something wrong Try again later');
+    // somthing wrong #1
+    $output = json_encode(array("typee" => 1, "resultt" => 'Something wrong Try again later #1'));
+    Die($output);
 }
 
 

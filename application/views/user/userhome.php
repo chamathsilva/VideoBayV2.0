@@ -23,7 +23,8 @@
     <!--Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" herf="../../../assets/CSS/custom/userhome.css">
+    <link rel="stylesheet" href="../../../assets/CSS/custom/userhome.css">
+    <link rel="stylesheet" href="../../../assets/CSS/custom/navbaruser.css">
 
 
 
@@ -31,29 +32,94 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="box">
-            <div class="row row-offcanvas row-offcanvas-left">
+        <div class="column col-sm-12 col-xs-12" id="main">
                 <?php
                 include '../includes/userhomenavbar.php'
                 ?>
+        </div>
+        <div class="box">
+            <div class="row row-offcanvas row-offcanvas-left">
+                <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                    <!-- side bar -->
+                    <?php
+                    include '../../views/includes/sidebar.php'
+                    ?>
+                </div>
+
+
+
+                <div class="column col-sm-10 col-xs-11" id="main">
+                    <div class="full">
+
+                        <div id="feedback"> </div>
+
+                        <div class="col-sm-12 col-xs-12 text recent">
+                            <h3 id="topic" style="text-align: center">Recent view</h3>
+                            <hr>
+                            <div id="recentLesson">
+                                <div class="col-md-5 col-xs-8 col-md-offset-3 text2" style="align-content: center">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4></a></div>
+
+
+                            </div>
+                        </div>
+
+
+                        <!--current lessons -->
+                        <div class="col-sm-12 text" id="result_wrap">
+                            <h3 style="text-align: center">Current lessons</h3>
+                            <!-- all lessons load by AJAX to results div -->
+                            <div id="results">
+                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                    <a onclick="" class="thumbnail" href="#">
+                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                        <h4>RERER</h4>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;">
+                        </div>
+                    </div>
 
 
 
 
 
 
+
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--jquery validation -->

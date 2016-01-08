@@ -1,7 +1,5 @@
 <?php
-    require("../../config/config.php");
     require("../../models/DB/Db.class.php");
-
     $db = new Db();
     $dbh = $db->getPurePodo();
     include("../../models/PHPAuth/Config.php");
@@ -10,16 +8,20 @@
     $config = new PHPAuth\Config($dbh);
     $auth   = new PHPAuth\Auth($dbh, $config);
 
-    if (!$auth->isLogged()) {
-        header('HTTP/1.0 403 Forbidden');
-        echo "Forbidden";
 
-        exit();
-    }else{
-        echo"ok";
-    }
+    $email = "mbckchamathsilva@gmail.com";
+    $password = "ucsc@123!@#AB";
+    $repeatpassword = "ucsc@123!@#A";
 
-// only work with vies/xx can't nested more than that
+
+    echo '<pre>';
+
+    $result = $auth->logout($auth->getSessionHash());
+    var_dump($result);
+
+    //header('location: ../../../index.php');
+
+    echo '<br>';
 
 
 

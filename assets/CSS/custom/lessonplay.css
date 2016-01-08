@@ -1,9 +1,8 @@
 body {
-    background-color:  #525453;
+    background-color: rgba(82, 84, 83, 0.55);
     height: 100%;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
 }
-
 html{
     height: 100%;
 }
@@ -13,8 +12,8 @@ html{
     position:relative;
 }
 .navbar-inverse {
-    background-color: #3B5999;
-    border-color: #3B5999;
+    background-color: #02a2f2;
+    border-color: #0196f2;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -24,13 +23,12 @@ html{
     border-color: skyblue;
 }
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #3B5999;
+    background-color: rgba(8, 101, 188, 0.90);
 }
 
 .recent{
     background-color: rgba(82, 84, 83, 0.11);
-    border-radius: 5px;
-    align-items: center;
+    border-radius: 5px
 }
 
 hr {
@@ -38,9 +36,4 @@ hr {
     margin-bottom: 5px;
     border: 0;
     border-top: 1px solid #eee;
-}
-
-#recentLesson{
-    align-content: center;
-    padding-left: 75px;
 }
