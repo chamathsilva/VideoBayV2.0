@@ -25,7 +25,9 @@
 
 <?php include '../includes/navbarreg.php' ?>
 
-    <div clas="regcontent">
+
+
+    <div class=" top-content">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
@@ -96,6 +98,8 @@
             </div>
         </div>
     </div>
+
+        </div>
 <!-- ROW END -->
 </div>
 

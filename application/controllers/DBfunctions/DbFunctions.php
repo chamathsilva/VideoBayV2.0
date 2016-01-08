@@ -27,6 +27,18 @@
     }
 
 
+    //for index page
+    function getTotalpages(){
+        global $db;
+        $item_per_page = 4; //need to put this configuration file
+        $lessons = $db->query("SELECT COUNT(*) FROM lesson");
+        $get_total_rows = $lessons[0]["COUNT(*)"];
+        //break total records into pages
+        $total_pages = ceil($get_total_rows/$item_per_page);
+        return $total_pages;
+    }
+
+
 
 
     d(test(),"hello");
