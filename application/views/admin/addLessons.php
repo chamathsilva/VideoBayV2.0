@@ -11,12 +11,6 @@
             </li>
         </ol>
 
-        <ul>
-            <li><a href="logout.php">Log out</a></li>
-            <li><a href="update.php"> Update details</a></li>
-            <li><a href="changepassword.php">Change password</a></li>
-        </ul>
-
 
         <div class="container" >
             <h2>Upload lessons</h2>
@@ -105,13 +99,13 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" onclick=upload_form() id="submit_btn" name="submit_btn" class="btn btn-info" value="Submit">Submit</button>
+                        <button type="button" onclick="upload_form()" id = "submit_btn" name="submit_btn" class="btn btn-info" value="Submit">Submit</button>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <img src="images/ajax-loader.gif" id="loading-img" style="display:none;" alt="Please Wait"/>
+                    <img src="../../../assets/images/ajax-loader.gif" id="loading-img" style="display:none;" alt="Please Wait"/>
                 </div>
             </form>
 
@@ -126,15 +120,7 @@
                     <div id="output"></div>
                 </div>
             </div>
-
         </div>
-
-
-
-
-
-
-
  </div>
 
 
@@ -147,27 +133,27 @@
     $("#MyUploadForm").validate({
         rules: {
             name: {
-                required: true,
+                required: true
 
             },
             description: {
-                required: true,
+                required: true
             },
             lecturer: {
-                required: true,
+                required: true
             },
             FileInput1: {
                 required: true,
-                extension: "mp4",
+                //extension: "mp4",
             },
             'files[]': {
                 required: true,
-                extension: "png",
+                //extension: "png",
             },
 
             FileInput3: {
                 required: true,
-                extension: "txt",
+                //extension: "txt",
             },
             "subject[]":{
                 required: true,

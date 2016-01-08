@@ -2,7 +2,7 @@
 
 function readConfigFile($id,$name){
 
-    require("../../models/DB/Db.class.php");
+    require_once("../../models/DB/Db.class.php");
     $db = new Db();
 //$name=$_FILES['files']['name'][0];
     $lineCount=0;
