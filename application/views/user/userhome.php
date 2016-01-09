@@ -72,7 +72,7 @@
                             <h3 style="text-align: center">Current lessons</h3>
                             <!-- all lessons load by AJAX to results div -->
                             <div id="results">
-                                <div class="col-lg-3 col-md-4 col-xs-6 text2">
+                                <div class="col-lg-3 col-md-4 col-xs-6 ">
                                     <a onclick="" class="thumbnail" href="#">
                                         <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
                                         <h4>RERER</h4>

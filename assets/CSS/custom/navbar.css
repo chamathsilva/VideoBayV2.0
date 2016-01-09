@@ -1,0 +1,77 @@
+
+/*bacckground color of nav bar*/
+.navbar-inverse {
+    background-color: #02a2f2;
+    border-color: #0196f2;
+}
+/* inner textcolor*/
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+/* toogle colors*/
+.navbar-inverse .navbar-toggle {
+    border-color: skyblue;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(8, 101, 188, 0.90);
+}
+
+.navbar-inverse .side-nav > li > a:focus {
+    color: #fff;
+    background-color: rgba(28, 114, 255, 0.29);
+    boder-radius: 5px ;
+}
+
+.navbar-collapse  .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #55bdff;
+    color: #ffffff;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background: #3695ff !important;
+    color: rgba(255, 255, 255, 0.89) !important;
+}
+
+.navbar-inverse .navbar-header .navbar-brand {
+    color: #ffffff;
+}
+
+
+.navbar-blue {
+    border-width:0;
+    background-color:#02a2f2;
+    color:#ffffff;
+    font-family:arial,sans-serif;
+    top:0;
+    position:fixed;
+    width:inherit;
+}
+
+.navbar-blue li > a,.navbar-toggle  {
+    color: #ffffff;
+}
+
+.navbar-blue .dropdown-menu li a {color: rgba(255, 255, 255, 0.80);}
+.navbar-blue .dropdown-menu li > a {padding-left:30px;}
+
+.navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
+    background-color: rgba(55, 155, 232, 0.68);
+    color: #42c5ff;
+}
+
+.navbar {
+    padding:0px;
+    -webkit-transition: background .8s ease-out,padding .8s ease-out;
+    -moz-transition: background .8s ease-out,padding .8s ease-out;
+    transition: background .8s ease-out,padding .8s ease-out;
+}
+
+
+/* CLASS FOR REMOVING PADDING IN NAVBAR*/
+
+
+.navbar-pad-original {
+    padding:0px;
+}
+

@@ -22,8 +22,7 @@
 
 
 
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplay.css">
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplaynav.css">
+
     <link rel="stylesheet" href="../../../assets/CSS/slider/sly.css">
     <!--slider-->
 
@@ -40,20 +39,14 @@
         <?php
         include '../includes/lessonplaynav.php'
         ?>
-     </div>
+    </div>
 
-    <div class="box" >
+    <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
 
             <div class="column col-sm-2 col-xs-2 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
-                </ul>
-
-                <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
-                    <li><a ><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
-                    <li><a ><i class="glyphicon glyphicon-paperclip"></i> Categories</a></li>
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
@@ -107,7 +100,7 @@
                                         <div class="detail-panal" style="width: 122%;height: 53px;margin-bottom: 5px;">
                                             <div class="col-sm-4">
                                                 <div class="lesson-topic">
-                                                topic
+                                                    topic
                                                 </div>
                                             </div>
 
@@ -137,11 +130,11 @@
 
                                         <div class="frame" id="centered">
                                             <ul class="slidee">
-                                                    <li>
-                                                        <article data-start="" data-end="">
-                                                            <a hreff=""><img src=" " height="140"  onclick="setCurTime()"></a>
-                                                        </article>
-                                                    </li>
+                                                <li>
+                                                    <article data-start="" data-end="">
+                                                        <a hreff=""><img src=" " height="140"  onclick="setCurTime()"></a>
+                                                    </article>
+                                                </li>
 
                                             </ul>
                                         </div>
@@ -280,7 +273,7 @@
         $("#watch_next").load("../../models/fetch_lessons_withlimit.php",{"});
 
         //load  watch later to the watch_later.
-        $("#watch_later").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
+            $("#watch_later").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
         $("#watch_later").load("../../models/fetch_watch_later.php");
 
 
