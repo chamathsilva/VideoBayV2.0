@@ -185,6 +185,7 @@
 
                 if (obj.typee == 1){
                     $("#feedback").hide().html(obj.resultt).slideDown("slow");
+
                 }else{
                     $("#register_form").slideUp();
                     document.getElementById("register_form").reset();
