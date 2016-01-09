@@ -43,7 +43,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         //  3 - bit user
 
         if ($type == 99){
-            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/admin.php'));
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/admin/adminHome.php'));
         }elseif($type == 1){
             $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
         }elseif($type == 2){
