@@ -100,7 +100,11 @@
 
 <script>
 
+
+
     var adminLoaddiv = $("#adminLoderdiv");
+
+    loadDashboard();
 
     function loadfeedback(){
         var feedback = $("#feedback_dropdown");

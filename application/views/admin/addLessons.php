@@ -2,45 +2,46 @@
 
 
     <div class="col-lg-12">
-        <h1 class="page-header" style="margin:50px 0px 20px">
+        <h1 class="page-header">
             Publish <small>lessons</small>
         </h1>
         <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-dashboard"></i> Publis lessons
+                <i class="fa fa-dashboard"></i> Publish lessons
             </li>
         </ol>
-
 
         <div class="container" >
             <h2>Upload lessons</h2>
 
-            <form class="" id="MyUploadForm" method = "POST" action="../../controllers/uploadLesson/uploadLesson.php" enctype="multipart/form-data">
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="lessonTitle">Lesson Title <span class="required">*</span></label>
-                    <div class="col-sm-10">
+
+            <form class="form-horizontal" id="MyUploadForm" method = "POST" action="../../controllers/uploadLesson/uploadLesson.php" enctype="multipart/form-data">
+
+                <div class="form-group" >
+                    <label class="control-label col-sm-2" for="lessonTitle">Lesson Title <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control" name="name" id="name" placeholder="Enter Lesson Title" required="true">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="field5" class="control-label col-sm-2">Description <span class="required">*</span></label>
-                    <div class="col-sm-10">
+                <div class="form-group" >
+                    <label for="field5" class="control-label col-sm-2">Description <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <textarea class="form-control" rows="4" name="description" id="description"  placeholder="Enter Description" required="true"></textarea>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="lessonTitle">Lecturer <span class="required">*</span></label>
-                    <div class="col-sm-10">
+                <div class="form-group" >
+                    <label class="control-label col-sm-2" for="lessonTitle">Lecturer <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <input type="text" class="form-control" name="lecturer" id="lecturer" placeholder="Enter Lecturer Name" required="true">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="subject" >Subject <span class="required">*</span></label>
-                    <div class="col-sm-offset-2 col-sm-10">
+                <div class="form-group col-sm-6">
+                    <label class="control-label col-sm-2" for="subject" >Subject <span class="required"></span></label>
+                    <div class="col-sm-offset-2 col-sm-4">
                         <div class="checkbox">
                             <label><input type="checkbox" value="Algorithm" name="subject[]">Algorithm </label>
                         </div>
@@ -56,9 +57,9 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="users">Users <span class="required">*</span></label>
-                    <div class="col-sm-offset-2 col-sm-10">
+                <div class="form-group col-sm-6">
+                    <label class="control-label col-sm-2"   for="users">Users <span class="required"></span></label>
+                    <div class="col-sm-offset-2 col-sm-4">
                         <div class="checkbox">
                             <label><input type="checkbox" value="UCSC" name="users[]" id="1"> UCSC</label>
                         </div>
@@ -77,34 +78,34 @@
 
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="lessonTitle">upload videos <span class="required">*</span></label>
-                    <div class="col-sm-10">
+                    <label class="control-label col-sm-2" for="lessonTitle">upload videos <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <input type="file" class="form-control" name="FileInput1" id="FileInput1"  >
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="lessonTitle">upload slides <span class="required">*</span></label>
-                    <div class="col-sm-10">
+                    <label class="control-label col-sm-2" for="lessonTitle">upload slides <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <input type="file" class="form-control" name="files[]" id="FileInput2" multiple="multiple" >
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="lessonTitle">upload config <span class="required">*</span></label>
-                    <div class="col-sm-10">
+                    <label class="control-label col-sm-2" for="lessonTitle">upload config <span class="required"></span></label>
+                    <div class="col-sm-9">
                         <input type="file" class="form-control" name="FileInput3" id="FileInput3" >
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-sm-offset-2 col-sm-9">
                         <button type="button" onclick="upload_form()" id = "submit_btn" name="submit_btn" class="btn btn-info" value="Submit">Submit</button>
                     </div>
                 </div>
 
 
-                <div class="form-group">
+                <div class="form-group ">
                     <img src="../../../assets/images/ajax-loader.gif" id="loading-img" style="display:none;" alt="Please Wait"/>
                 </div>
             </form>
@@ -156,12 +157,12 @@
                 //extension: "txt",
             },
             "subject[]":{
-                required: true,
-                minlength:1,
+                //required: true,
+                //minlength:1,
             },
             "users[]":{
-                required: true,
-                minlength:1,
+                //required: true,
+                //minlength:1,
             }
 
         },
