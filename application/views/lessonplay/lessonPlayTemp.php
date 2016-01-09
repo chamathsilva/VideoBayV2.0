@@ -1,22 +1,22 @@
 <?php
-    session_start();
-    require_once("../../controllers/DBfunctions/DbFunctions.php");
-    //////////////////////// make isset
-    $id = $_GET['id'];
-    $user_id =  $_SESSION["user"];
+session_start();
+require_once("../../controllers/DBfunctions/DbFunctions.php");
+//////////////////////// make isset
+$id = $_GET['id'];
+$user_id =  13;
 
-    $data = getLessonbyid($id); /// create return test
-    $name = $data['name'];
-    $lecture = $data['lecture'];
-    $no_of_slid = $data['no_of_slides'];
-    $temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
-    $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
+$data = getLessonbyid($id); /// create return test
+$name = $data['name'];
+$lecture = $data['lecture'];
+$no_of_slid = $data['no_of_slides'];
+$temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
+$src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
 
-    $slid_data = getAllBySortOrder($id);
-    $topics = getTpoicsById($id);
+$slid_data = getAllBySortOrder($id);
+$topics = getTpoicsById($id);
 
-    //Update history //recent // staticstics
-    insertresentLesson($id,$user_id);
+//Update history //recent // staticstics
+insertresentLesson($id,$user_id);
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@
         <?php
         include '../includes/lessonplaynav.php'
         ?>
-     </div>
+    </div>
 
     <div class="box" >
         <div class="row row-offcanvas row-offcanvas-left">
@@ -143,7 +143,7 @@
                                             <div class="col-sm-6">
                                                 <div class="lesson-topic">
                                                     <i class="fa fa-graduation-cap"></i>
-                                                        <?php echo $lecture; ?>
+                                                    <?php echo $lecture; ?>
                                                 </div>
                                             </div>
 
