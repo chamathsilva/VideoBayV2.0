@@ -206,10 +206,10 @@
 
         function beforeSubmit(){
             if (!$('#register_form').valid()) {
-                alert("form is invalid");
-                return true;
+                //alert("form is invalid");
+                return false;
             }
-            alert("form is valid");
+            //alert("form is valid");
         }
 
     }
