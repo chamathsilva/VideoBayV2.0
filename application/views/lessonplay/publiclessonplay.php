@@ -18,15 +18,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="../../../assets/CSS/custom/publicnav.css">
+    <link rel="stylesheet" href="../../../assets/CSS/colorbox.css">
 
-
-
-
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplay.css">
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplaynav.css">
-
-
-    <link rel="stylesheet" href="../../../assets/CSS/slider/sly.css">
     <!--slider-->
 
 
@@ -37,11 +31,15 @@
 </head>
 
 <body>
-<div class="col-sm-12">
+
+<div class="wrapper">
     <?php
-    include '../includes/navbarindex.php'
+    include '../includes/navbarreg.php'
     ?>
 </div>
+
+<!--
+
 <div class="wrapper">
 
 
@@ -71,6 +69,7 @@
 
             </div>
             <!-- main right col -->
+<!--
             <div class="column col-sm-10 col-xs-10" id="main">
 
                 <div class="full ">
@@ -80,6 +79,7 @@
 
 
                     <!--hide karala tibba eka ain kara -->
+<!--
                     <div id = "lessonplay" class = "hideee" class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
@@ -87,6 +87,8 @@
                                     <video id="myVideo" class="embed-responsive-item"  width = "300px" height ="400px" autoplay controls>
                                         <source src="">
                                         <!--<source src="../../../data/uploaded_lessons/44/videos/1.mp4">-->
+
+<!--
                                     </video>
                                 </div>
                             </div>
@@ -130,6 +132,7 @@
 
                                 <div class="col-sm-12">
                                     <!--div class="detail-panal" style="border:0px solid black;width:122%;height:300px;overflow-y:hidden;overflow-x:scroll;"-->
+<!--
                                     <div class="wrap">
 
                                         <div class="frame" id="centered">
@@ -145,11 +148,12 @@
 
 
                                         <!-- Controls & Scroll Bar-->
+<!--
                                         <div class="controls center">
                                             <button class="btn prevPage"> <-- page</button>
                                             <button class="btn prev"><i class="icon-chevron-left"></i> prev</button>
                                             <button class="btn next">next <i class="icon-chevron-right"></i></button>
-                                            <button class="btn nextPage">page --> </button>
+                                            <button class="btn nextPage">page -> </button>
                                         </div>
 
                                         <div class="scrollbar">
@@ -166,6 +170,7 @@
 
                                     <div class="info text-center ">
                                         <!--disply current slid num -->
+<!--
                                         <div id = current >  </div>
                                     </div>
                                 </div>
@@ -176,9 +181,9 @@
 
                     </div> <!--Full end -->
 
-
+<!--
                 </div>  <!--container end-->
-
+<!--
 
             </div>
         </div>
