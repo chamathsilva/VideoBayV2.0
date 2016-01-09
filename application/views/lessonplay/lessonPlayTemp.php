@@ -1,4 +1,4 @@
-<?php/*
+<?php
 session_start();
 require_once("../../controllers/DBfunctions/DbFunctions.php");
 //////////////////////// make isset
@@ -18,7 +18,7 @@ $topics = getTpoicsById($id);
 //Update history //recent // staticstics
 insertresentLesson($id,$user_id);
 
-*/?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
