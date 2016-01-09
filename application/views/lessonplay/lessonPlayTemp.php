@@ -1,4 +1,4 @@
-<?php
+<?php/*
 session_start();
 require_once("../../controllers/DBfunctions/DbFunctions.php");
 //////////////////////// make isset
@@ -18,7 +18,7 @@ $topics = getTpoicsById($id);
 //Update history //recent // staticstics
 insertresentLesson($id,$user_id);
 
-?>
+*/?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +54,7 @@ insertresentLesson($id,$user_id);
 <div class="wrapper">
     <div class="col-sm-12">
         <?php
-        include '../includes/lessonplaynav.php'
+        include '../includes/lessonplaynavTemp.php'
         ?>
     </div>
 
@@ -64,12 +64,6 @@ insertresentLesson($id,$user_id);
             <div class="column col-sm-2 col-xs-2 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
-                </ul>
-
-                <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
-                    <li><a ><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
-                    <li><a ><i class="glyphicon glyphicon-paperclip"></i> Categories</a></li>
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
