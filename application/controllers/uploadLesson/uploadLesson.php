@@ -78,11 +78,11 @@ $lecturer = filter_var($_POST["lecturer"], FILTER_SANITIZE_STRING);
 
 $lessons = $db->query("INSERT INTO lesson(name, description, lecture) VALUES (:nam,:des,:lec)",array("nam"=>$lesson_name,"des"=>$description,"lec"=>$lecturer));
 $lessonID=$db->lastInsertId();
-echo $lessonID;
 
-$UploadDirectory1 = 'uploads/' . $lessonID . '/' . 'videos/';
-$UploadDirectory2 = 'uploads/'.$lessonID.'/'.'slides/';
-$UploadDirectory3 = 'uploads/'.$lessonID.'/';
+
+$UploadDirectory1 = '../../../data/uploads/' . $lessonID . '/' . 'videos/';
+$UploadDirectory2 = '../../../data/uploads/'.$lessonID.'/'.'slides/';
+$UploadDirectory3 = '../../../data/uploads/'.$lessonID.'/';
 
 $File_Name = strtolower($_FILES['FileInput1']['name']);
 $NewFileName = "1.mp4";
@@ -148,6 +148,7 @@ for($r=0;$r<4;$r++){
         $lsus = $db->query("INSERT INTO lessonusers(lesson_id, lsnuser) VALUES (:lud,:lusr)",array("lud"=>$lessonID,"lusr"=>$use[$r]));
     }
 }
+echo "Uploaded Successfuly";
 
 
 ?>

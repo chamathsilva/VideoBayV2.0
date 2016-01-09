@@ -1,0 +1,3 @@
+This directory contains all public files for your application. index.php sets up and invokes Zend_Application, which in turn invokes the application/Bootstrap.php file, resulting in dispatching the front controller. The web root of your web server would typically be set to this directory.
+
+

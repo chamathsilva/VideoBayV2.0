@@ -35,7 +35,7 @@ if ($result['error']){
     // if registration not complete
     $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
 }else{
-    $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
+    $output = json_encode(array("typee" => 0, "resultt" => $result['message'] ));
 }
 
 //$output = json_encode(array("typee" => 1, "resultt" => "$key--$firstname -- $lastname --  $username --  $email -- $password -- $passwordconform -- $tems "));

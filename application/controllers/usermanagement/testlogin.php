@@ -52,7 +52,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         if ($type == 99){
             $output = json_encode(array("typee" => 0, "resultt" => 'application/views/admin/adminHome.php'));
         }elseif($type == 1){
-            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/userhomeOld.php'));
         }elseif($type == 2){
             $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/ucsc.php'));
         }elseif($type == 3){

@@ -1,12 +1,21 @@
+<div class="col-sm-12 text">
+    <h3 id="topic">Watch Later</h3>
+    <div id="recentLesson"></div>
+</div>
+
+<div class="col-sm-12 text" id="result_wrap">
+
 <?php
 require("../../models/DB/Db.class.php");
 $db = new Db();
 session_start();
 
 
-$user_id =  $_SESSION["user"];
+//$user_id =  $_SESSION["user"];
 
-$lessons = $db->query("SELECT * FROM `watchlater` WHERE `user_id` =".$user_id);
+$user_id = 13;
+
+$lessons = $db->query("SELECT * FROM `watchlater` WHERE `user_id` = :uid",array("uid" =>$user_id));
 
 foreach ($lessons as $row) {
     $id = $row['lesson_id'];
@@ -29,14 +38,16 @@ foreach ($lessons as $row) {
     echo '<a class="thumbnail" href="../lessonsplay/lessonPlayLater.php?id='."$id".'&time='.$time.'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';
     echo '<h4>'."$name".'</h4></a><span style="margin-right:10px;float:right" class="btn btn-danger btn-sm" onclick = "deleteWatchLater('.$id.')" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </span>'.'</h4>';
-
+    echo'</a>';
     echo'</div>';
 }
 
 if (count($lessons) == 0){
-    echo "This list has no lessons.";
+    echo "<div>This list has no lessons.<div>";
 }
 ?>
+
+<div>
 
 
 

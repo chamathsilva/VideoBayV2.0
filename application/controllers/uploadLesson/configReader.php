@@ -7,12 +7,11 @@ function readConfigFile($id,$name){
 //$name=$_FILES['files']['name'][0];
     $lineCount=0;
     $newLine=0;
-    $myfile = fopen("uploads/$id/$name", "r") or die("Unable to open file!");
+    $myfile = fopen("../../../data/uploads/$id/$name", "r") or die("Unable to open file!");
 
     while(!feof($myfile)){
         //get the return line from the fgets
         $currentLine = fgets($myfile);
-        echo "$currentLine";
         if(trim($currentLine) != ''){
             $currentLine = explode(',', $currentLine);
 
