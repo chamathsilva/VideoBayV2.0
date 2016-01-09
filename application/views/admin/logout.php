@@ -19,6 +19,12 @@
     $result = $auth->logout($auth->getSessionHash());
     var_dump($result);
 
+    // remove all session variables
+    session_unset();
+
+    // destroy the session
+    session_destroy();
+
     header('location: ../../../index.php');
 
     echo '<br>';

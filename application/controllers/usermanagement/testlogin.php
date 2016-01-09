@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_POST["username"]) && isset($_POST["password"])){
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -36,6 +36,13 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         $uid = $auth->getSessionUID($result["hash"]);
         $result = $auth->getUser($uid);
         $type = $result['type'];
+
+        //////////////////////////////////////
+        //Temporary use only
+
+        $_SESSION["user"] = $uid;
+
+        /////////////////////////////////////
 
         //  99 - admin
         //  1 - general user
