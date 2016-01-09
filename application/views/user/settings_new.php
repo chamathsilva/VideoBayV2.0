@@ -75,12 +75,24 @@
 
                 <div class="full ">
                     <div class= "container-fluid">
+                        <h3 class="text3">GENERAL ACCOUNT SETTINGS</h3>
+                        <div class="col-sm-4 col-md-2 col-sm-offset-1 col-md-offset-1" style="padding-bottom: 10px">
+                            <img src="../../../assets/images/user.png" class="img-rounded img-responsive" />
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <div class="alert alert-info">
+                                <h2>User Bio : </h2>
+                                <div class="panel-body">
+                                    <label class="control-label col-sm-8 col-md-6 text4"  for="email1">Name :</label>
+                                    <label class="control-label col-sm-8 col-md-6 text4"  for="email1">Sunimal Malkakulage</label>
+                                    <label class="control-label col-sm-8 col-md-6 text4" for="email1">email :</label>
+                                    <label class="control-label col-sm-8 col-md-6 text4"  for="email1">smkmal@gmail.com</label>
+                                </div>
+                            </div>
+                        </div>
 
-                        <h3><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GENERAL ACCOUNT SETTINGS</strong></h3>
+                        <div class=" col-md-offset-1	col-md-10 col-sm-offset-1 col-sm-10 ">
 
-                        <div class="jumbotron-fluid col-md-offset-1	col-md-7 col-sm-offset-2 col-sm-8 col-xs-offset-3 col-xs-7">
-                            <br>
-                            <br>
                             <div class="panel-group" id="accordion">
 
                                 <div class="panel panel-primary">
@@ -91,7 +103,24 @@
                                     </div>
                                     <div id="name" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="fname">Update First Name </label>
+                                            <form class="horizontal">
+                                                <div class="form-group" style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-2 form-control-label">firstname</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group " style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-2 form-control-label">lastname</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                <button type="submit" class="btn btn-default">Cancel</button>
+                                             </form>
+<!--
+                                            <label class="control-label col-sm-6 col-xs-6" style="font-weight:normal" for="fname">Update First Name </label>
                                             <div class="col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1">
                                                 <input type="text" class="form-control" id="Fname"  value="" placeholder="Enter First Name">
                                                 <br>
@@ -103,7 +132,7 @@
                                             </div>
                                             <button type="button" class="btn  col-sm-2 col-sm-offset-6 col-xs-11 " style="box-shadow: 2px 2px 10px grey">Confirm</button>
                                             <button type="button" class="btn  col-sm-2 col-sm-offset-1 col-xs-11 " style="box-shadow: 2px 2px 10px grey" >Cancel</button>
-
+-->
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +145,27 @@
                                     </div>
                                     <div id="email" class="panel-collapse collapse">
                                         <div class="panel-body">
+                                            <label class="control-label col-sm-6" style="font-weight:normal" for="email1">current email </label>
+                                            <label class="control-label col-sm-6" style="font-weight:normal" for="email1">load email</label>
 
+                                            <form class="horizontal">
+                                                <div class="form-group" style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-3 form-control-label">new email</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                <button type="submit" class="btn btn-default">Cancel</button>
+                                            </form>
+
+
+
+
+
+
+
+<!--
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="email1">Your current email address </label>
                                             <label class="control-label col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1" style="font-weight:normal" for="email1"></label>
 
@@ -128,6 +177,7 @@
                                             </div>
                                             <button type="button" class="btn btn-primary col-sm-2 col-sm-offset-6 col-xs-11 " style="box-shadow: 2px 2px 10px grey">Confirm</button>
                                             <button type="button" class="btn btn-primary col-sm-2 col-sm-offset-1 col-xs-11 " style="box-shadow: 2px 2px 10px grey" >Cancel</button>
+-->
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +190,42 @@
                                     </div>
                                     <div id="password" class="panel-collapse collapse">
                                         <div class="panel-body">
+                                            <form class="horizontal">
+                                                <div class="form-group" style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-3 form-control-label">Current</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="password">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group " style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-3" form-control-label">New </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="password">
+                                                    </div>
+                                                </div>
 
+                                                <div class="form-group " style="padding-bottom: 30px">
+                                                    <label for="inputEmail3" class="col-sm-3" form-control-label">confirm</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="password">
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                <button type="submit" class="btn btn-default">Cancel</button>
+                                            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="password1">Enter your current password </label>
                                             <div class="col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1">
                                                 <input type="password" class="form-control" id="psw1" placeholder="Enter Password">
@@ -162,6 +247,7 @@
 
                                             <button type="button" class="btn btn-primary col-sm-2 col-sm-offset-6 col-xs-11 " style="box-shadow: 2px 2px 10px grey">Confirm</button>
                                             <button type="button" class="btn btn-primary col-sm-2 col-sm-offset-1 col-xs-11 "  style="box-shadow: 2px 2px 10px grey" >Cancel</button>
+-->
                                         </div>
                                     </div>
                                 </div>

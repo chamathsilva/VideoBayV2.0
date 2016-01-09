@@ -132,10 +132,10 @@
                                                             <a hreff="<?php/* echo $index; */?>"><img src=" <?php/* echo $src_path.$index.'.jpg' */?> " height="140"  onclick="setCurTime(<?php/* echo $start_time */?>)"></a>
                                                         </article>
                                                     </li>
-                                                    <?php
+                                                    <?php/*
                                                     //$index += 1;
                                                 }
-                                                ?>
+                                                */?>
 
                                             </ul>
                                         </div>
@@ -192,121 +192,119 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
-<!--UCSC Vidobay-->
-<script src="../../../assets/JS/validation.js"></script>
-
-                <?php include '../../controllers/synchronize.php';?>
-                <!--Slider -->
-
-                <script src="../../../assets/CSS/slider/plugin.js"></script>
-                <script src="../../../assets/CSS/slider/sly.js"></script>
-                <!--
-                <script src="slider/slider.js"></script>
-                -->
-
-
-                <script type="text/javascript">
-                    var $wrap  = $('.wrap');
-                    var sly = new Sly( '#centered', {
-                        horizontal: 1,
-                        itemNav: 'centered',
-                        smart: 1,
-                        activateOn: 'click',
-                        mouseDragging: 1,
-                        touchDragging: 1,
-                        releaseSwing: 1,
-                        startAt: 0,
-                        scrollBar: $wrap.find('.scrollbar'),
-                        scrollBy: 1,
-                        speed: 300,
-                        elasticBounds: 1,
-                        easing: 'easeOutExpo',
-                        dragHandle: 1,
-                        dynamicHandle: 1,
-                        clickBar: 1,
-
-
-                        // Buttons
-                        prev: $wrap.find('.prev'),
-                        next: $wrap.find('.next'),
-                        prevPage: $wrap.find('.prevPage'),
-                        nextPage: $wrap.find('.nextPage')
-                    });
-
-                    sly.init();
-
-                    function activeslid(id) {
-                        sly.activate(id);
-
-                    }
 
 
 
+<?php include '../../controllers/synchronize.php';?>
+<!--Slider -->
 
-                </script>
+<script src="../../../assets/CSS/slider/plugin.js"></script>
+<script src="../../../assets/CSS/slider/sly.js"></script>
+<!--
+<script src="slider/slider.js"></script>
+-->
+
+
+<script type="text/javascript">
+    var $wrap  = $('.wrap');
+    var sly = new Sly( '#centered', {
+        horizontal: 1,
+        itemNav: 'centered',
+        smart: 1,
+        activateOn: 'click',
+        mouseDragging: 1,
+        touchDragging: 1,
+        releaseSwing: 1,
+        startAt: 0,
+        scrollBar: $wrap.find('.scrollbar'),
+        scrollBy: 1,
+        speed: 300,
+        elasticBounds: 1,
+        easing: 'easeOutExpo',
+        dragHandle: 1,
+        dynamicHandle: 1,
+        clickBar: 1,
+
+
+        // Buttons
+        //prev: $wrap.find('.prev'),
+        //next: $wrap.find('.next'),
+        prevPage: $wrap.find('.prevPage'),
+        nextPage: $wrap.find('.nextPage')
+    });
+
+    sly.init();
+
+    function activeslid(id) {
+        sly.activate(id);
+
+    }
 
 
 
 
-                <script type="text/javascript">
-                    $(document).ready(function() {
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
 
 
 
-                        var panal = $("#lessonplay");
+        var panal = $("#lessonplay");
 
 
-                        $("#results").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
+        $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
 
 
-                        panal.slideDown(function(){panal.removeClass("hide");});
-                        //jump to the video to specifc time.used for watch later function.
-                        $("#results").hide();
+        panal.slideDown(function(){panal.removeClass("hide");});
+        //jump to the video to specifc time.used for watch later function.
+        $("#results").hide();
 
-                        //load  lessons to the watch next.
-                        $("#watch_next").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
-                        $("#watch_next").load("../../models/fetch_lessons_withlimit.php",{"});
+        //load  lessons to the watch next.
+        $("#watch_next").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        $("#watch_next").load("../../controllers/lessonmanagement/watchNext.php",{"id":<?php echo $id; ?>});
 
-                        //load  watch later to the watch_later.
-                            $("#watch_later").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
-                        $("#watch_later").load("../../models/fetch_watch_later.php");
-
-
-
-                        // this is for enter press , this call on click event
-                        $('#search-form').submit(function(e) {
-                            var $this = $(this);
-                            e.preventDefault(); // Prevents the form from submitting regularly
-                            $("#serchbut").click();
-
-                        });
-                        // this is for mouse click event
-                        $("#serchbut").click(function(){
-                            $( "#lessonplay" ).empty();
-                            $("#results").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
-                            var search_keyword = document.getElementById("srch-term").value;
-                            $("#results").load("../Search/searchResults.php",{'srch-term':search_keyword});
-
-                        });
+        //load  watch later to the watch_later.
+        $("#watch_later").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        $("#watch_later").load("../../models/fetch_watch_later.php");
 
 
 
-                    });
-                </script>
+        // this is for enter press , this call on click event
+        $('#search-form').submit(function(e) {
+            var $this = $(this);
+            e.preventDefault(); // Prevents the form from submitting regularly
+            $("#serchbut").click();
 
-                <script>
-                    function myFunction() {
-                        setCurTime(60);
-                        alert("Hello! I am an alert box!!".concat(getCurTime()));
-                    }
-                    function addWatchlater() {
-                        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
-                    }
+        });
+        // this is for mouse click event
+        $("#serchbut").click(function(){
+            $( "#lessonplay" ).empty();
+            $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+            var search_keyword = document.getElementById("srch-term").value;
+            alert(search_keyword);
+            $("#results").load("../../controllers/lessonmanagement/searchLessons.php",{'key':search_keyword});
+
+        });
 
 
 
-                </script>
+    });
+</script>
 
+<script>
+    function myFunction() {
+        setCurTime(60);
+        alert("Hello! I am an alert box!!".concat(getCurTime()));
+    }
+    function addWatchlater() {
+        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
+    }
+
+
+
+</script>
 
 
 </body>

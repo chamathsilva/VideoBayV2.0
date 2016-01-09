@@ -1,3 +1,14 @@
+Time : 20:30:25
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lesson_name' cannot be null
+Raw SQL : INSERT INTO history (lesson_id,user_id,time_stamp) VALUES (:lid, :uid, CURRENT_TIMESTAMP) ON DUPLICATE KEY UPDATE `time_stamp` = CURRENT_TIMESTAMP
+
+Time : 20:30:15
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lesson_name' cannot be null
+Raw SQL : INSERT INTO history (lesson_id,user_id,time_stamp) VALUES (:lid, :uid, CURRENT_TIMESTAMP) ON DUPLICATE KEY UPDATE `time_stamp` = CURRENT_TIMESTAMP
+
+Time : 19:30:39
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
 Time : 17:30:04
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lesson_name' cannot be null
 Raw SQL : INSERT INTO history (lesson_id,user_id,time_stamp) VALUES (:lid, :uid, CURRENT_TIMESTAMP) ON DUPLICATE KEY UPDATE `time_stamp` = CURRENT_TIMESTAMP
