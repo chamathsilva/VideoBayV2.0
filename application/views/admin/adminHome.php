@@ -89,8 +89,10 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="../../../assets/JS/bootstrap-notify.min.js"></script>
 <script src="../../../assets/dataTable/js/jquery.dataTables.js"></script>
-
-
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="../../../assets/JS/jquery.form.min.js"></script>
 
 <script>
 
