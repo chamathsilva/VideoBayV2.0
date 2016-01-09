@@ -1,5 +1,5 @@
 <?php
-
+/*
     require("../../models/DB/Db.class.php");
     $db = new Db();
     $dbh = $db->getPurePodo();
@@ -18,7 +18,7 @@
     $lastname = $result['Lastname'];
     $username  = $result['username'];
 
-
+*/
 ?>
 
 
@@ -93,12 +93,12 @@
                                         <div class="panel-body">
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="fname">Update First Name </label>
                                             <div class="col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1">
-                                                <input type="text" class="form-control" id="Fname"  value="<?php echo $firstname;?>" placeholder="Enter First Name">
+                                                <input type="text" class="form-control" id="Fname"  value="" placeholder="Enter First Name">
                                                 <br>
                                             </div>
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="lname">Update Last Name </label>
                                             <div class="col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1">
-                                                <input type="text" class="form-control" id="Lname" value="<?php echo $lastname;?>" placeholder="Enter Last Name">
+                                                <input type="text" class="form-control" id="Lname" value="" placeholder="Enter Last Name">
                                                 <br>
                                             </div>
                                             <button type="button" class="btn  col-sm-2 col-sm-offset-6 col-xs-11 " style="box-shadow: 2px 2px 10px grey">Confirm</button>
@@ -118,7 +118,7 @@
                                         <div class="panel-body">
 
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="email1">Your current email address </label>
-                                            <label class="control-label col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1" style="font-weight:normal" for="email1"><?php echo "$email";?> </label>
+                                            <label class="control-label col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1" style="font-weight:normal" for="email1"></label>
 
                                             <label class="control-label col-sm-4 col-xs-11" style="font-weight:normal" for="email2"><br>Enter your new email </label>
                                             <div class="col-sm-5 col-sm-offset-3 col-xs-9 col-xs-offset-1">
