@@ -46,6 +46,7 @@
 <div class="wrapper">
 <?php include 'application/views/includes/navbarindex.php' ?>
     <div class="top-content">
+
         <div class="inner-bg">
             <div class="container">
                 <div class="row">
@@ -140,7 +141,7 @@
     <script src="assets/JS/jquery.colorbox-min.js"></script>
 
     <!--UCSC Vidobay-->
-    <script src="assets/js/validation.js"></script>
+    <script src="assets/JS/validation.js"></script>
 
     <!--login script-->
     <script>
