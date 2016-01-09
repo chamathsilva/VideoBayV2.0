@@ -33,39 +33,29 @@
 <body>
     <div class="wrapper">
         <div class="column col-sm-12 col-xs-12" id="main">
-                <?php
-                include '../includes/userhomenavbar.php'
-                ?>
+                <?php include '../includes/userhomenavbar.php' ?>
         </div>
         <div class="box">
             <div class="row row-offcanvas row-offcanvas-left">
                 <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
                     <!-- side bar -->
-                    <?php
-                    include '../../views/includes/sidebar.php'
-                    ?>
+                    <?php include '../../views/includes/sidebar.php' ?>
                 </div>
-
-
 
                 <div class="column col-sm-10 col-xs-11" id="main">
                     <div class="full">
-
                         <div id="feedback"> </div>
-
-                        <div class="col-sm-12 col-xs-12 text recent">
-                            <h3 id="topic" style="text-align: center">Recent view</h3>
-                            <hr>
-                            <div id="recentLesson">
-                                <div class="col-md-5 col-xs-8 col-md-offset-3 text2" style="align-content: center">
-                                    <a onclick="" class="thumbnail" href="#">
-                                        <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
-                                        <h4>RERER</h4></a></div>
-
-
+                            <div class="col-sm-12 col-xs-12 text recent">
+                                <h3 id="topic" style="text-align: center">Recent view</h3>
+                                <hr>
+                                <div id="recentLesson">
+                                    <div class="col-md-5 col-xs-8 col-md-offset-3 text2" style="align-content: center">
+                                        <a onclick="" class="thumbnail" href="#">
+                                            <img class="img-responsive" src="../../../assets/images/1.JPG" alt="">
+                                            <h4>RERER</h4></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
 
                         <!--current lessons -->
                         <div class="col-sm-12 text" id="result_wrap">
@@ -106,29 +96,19 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;">
-                        </div>
+                        <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;"></div>
                     </div>
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
-</div>
+    </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--jquery validation -->
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-
 
 </body>
 </html>

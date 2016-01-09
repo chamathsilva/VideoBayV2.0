@@ -94,6 +94,10 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <script src="../../../assets/JS/jquery.form.min.js"></script>
 
+<!--graph -->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 <script>
 
     var adminLoaddiv = $("#adminLoderdiv");

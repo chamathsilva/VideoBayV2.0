@@ -1,2 +1,24 @@
-Time : 03:24:16
-SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Time : 01:12:38
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uid' in 'where clause'
+Raw SQL : UPDATE recentlesson SET lesson_id = :lid WHERE user_id = uid
+
+Time : 01:12:35
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uid' in 'where clause'
+Raw SQL : UPDATE recentlesson SET lesson_id = :lid WHERE user_id = uid
+
+Time : 01:11:44
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uid' in 'where clause'
+Raw SQL : UPDATE recentlesson SET lesson_id = :lid WHERE user_id = uid
+
+Time : 01:11:28
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uid' in 'where clause'
+Raw SQL : UPDATE recentlesson SET lesson_id = :lid WHERE user_id = uid
+
+Time : 01:00:46
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+Raw SQL : SELECT * FROM subtitles WHERE lesson_id = :lid ORDER BY slide_id'
+
+Time : 00:55:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '108' at line 1
+Raw SQL : SELECT * FROM 108
+

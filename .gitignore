@@ -1,2 +1,4 @@
 data/
 .idea
+/application/models/DB/settings.ini.php
+application/controllers/uploadLesson/uploads

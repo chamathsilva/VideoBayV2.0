@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_POST["username"]) && isset($_POST["password"])){
     //check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -37,13 +37,20 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         $result = $auth->getUser($uid);
         $type = $result['type'];
 
+        //////////////////////////////////////
+        //Temporary use only
+
+        $_SESSION["user"] = $uid;
+
+        /////////////////////////////////////
+
         //  99 - admin
         //  1 - general user
         //  2 - ucsc user
         //  3 - bit user
 
         if ($type == 99){
-            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/admin.php'));
+            $output = json_encode(array("typee" => 0, "resultt" => 'application/views/admin/adminHome.php'));
         }elseif($type == 1){
             $output = json_encode(array("typee" => 0, "resultt" => 'application/views/user/homePage.php'));
         }elseif($type == 2){

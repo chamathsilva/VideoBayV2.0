@@ -13,6 +13,8 @@
     //break total records into pages
     $total_pages = ceil($get_total_rows/$item_per_page);
 
+
+
 ?>
 
 <html>

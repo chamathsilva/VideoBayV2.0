@@ -1,6 +1,6 @@
 <?php
 require_once("configReader.php");
-require("../../models/DB/Db.class.php");
+require_once("../../models/DB/Db.class.php");
 $db = new Db();
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
     die();
