@@ -8,7 +8,9 @@
     $config = new PHPAuth\Config($dbh);
     $auth   = new PHPAuth\Auth($dbh, $config);
 
-    $uid = $auth->getSessionUID($auth->getSessionHash());
+    //$uid = $auth->getSessionUID($auth->getSessionHash());
+
+    $uid = 18;
     $result = $auth->getUser($uid);
 
 
