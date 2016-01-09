@@ -1,4 +1,6 @@
 <?php
+
+
 require("../../models/DB/Db.class.php");
 $db = new Db();
 session_start();

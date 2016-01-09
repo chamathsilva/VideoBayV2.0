@@ -10,10 +10,10 @@
 
 
 
-$email = "mbcsdskchamathssilva@gmail.com";
-$password = "cucsc@123!@#AB";
-    $repeatpassword = "ucsc@123!@#A";
-    $remember = "1";
+$email = "alex@gmail.com";
+$password = "Dope1992104silva";
+    $repeatpassword = "Dope1992104silva";
+    $remember = "0";
 
 
     echo '<pre>';

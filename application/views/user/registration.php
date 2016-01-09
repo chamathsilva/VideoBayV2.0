@@ -179,15 +179,17 @@
             success: function(data) {
                 var obj = jQuery.parseJSON( data);
 
-                alert("Thank you for your comment!" + data);
+                //alert("Thank you for your comment!" + data);
 
                 //json eke enne typee kiyana ekekn error ekak da nadda kiyana eka
 
                 if (obj.typee == 1){
                     $("#feedback").hide().html(obj.resultt).slideDown("slow");
                 }else{
+                    $("#register_form").slideUp();
                     document.getElementById("register_form").reset();
-                    window.location.replace(obj.resultt);
+                    $("#feedback").hide().html("Your account is created,you can log now").slideDown("slow");
+                    //window.location.replace(obj.resultt);
                 }
 
 

@@ -71,6 +71,13 @@
 
     }
 
+    function selet(){
+        global $db;
+        $topic = $db->query("SELECT * FROM subtitles WHERE lesson_id = :lid ORDER BY slide_id",array("lid" => $lesson_id));
+        return $topic;
+
+    }
+
 
 
 

@@ -112,7 +112,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <div id="progressbox" ><div id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"><div id="statustxt">0%</div ></div></div>
+                    <div id="progressbox" ><div id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%; max-height:15px; "><div id="statustxt">0%</div ></div></div>
                 </div>
             </div>
 
