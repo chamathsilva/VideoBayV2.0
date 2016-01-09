@@ -19,6 +19,13 @@
     </ul>
 
 
+<ul class="list-unstyled hidden-xs" id="sidebar-footer">
+    <li>
+        <a href=""><h3>UCSC<br>VideoBay</h3></a>
+    </li>
+</ul>
+
+
 
 
     <ul class="nav visible-xs" id="xs-menu">

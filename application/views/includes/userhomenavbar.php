@@ -9,23 +9,29 @@
         <a href="userhome.php" class="navbar-brand logo">vb</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
-
-        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
-
-                <form class="navbar-form navbar-left" id = "search-form">
-                    <div class="input-group input-group-sm" id = "search-form" >
-                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                        <div class="input-group-btn">
-                            <button id="serchbut" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
+        <form class="navbar-form navbar-left" id = "search-form">
+            <div class="input-group input-group-sm" id = "search-form" >
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button id="serchbut" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <ul class="nav navbar-nav">
             <li>
                 <a href="userhome.php"><i class="glyphicon glyphicon-home"></i> Home</a>
             </li>
             <li>
                 <a  data-toggle="modal" data-target="#myModalrequest"><i class="glyphicon glyphicon-plus"></i>requset</a>
             </li>
+
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
+
+
+
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
                 <ul class="dropdown-menu">

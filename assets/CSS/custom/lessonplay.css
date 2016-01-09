@@ -80,10 +80,7 @@ html{
     text-align: left;
 }
 
-/*
-<div class=​"form-group">​…​</div>​.form-bottom form .input-error {
-    border-color: #19b9e7;
-}*/
+
 
 /***** button style *****/
 button.btn {
@@ -157,33 +154,10 @@ button.btn.like{
 /* NAVBAR STYLE */
 
 
-.navbar-inverse .side-nav > li > a {
-    color: #FFF;
-}
-
-.navbar-inverse .navbar-brand {
-    color: #FFF;
-}
-
-ul#adminNav .active{
-    color: black;
-    background-color: white;
-}
-
-.navbar2 #nav2 > .active > a {
-    color: red;
-}
-
 
 /* ADDED PADDING IN NAVBAR */
 
 
-.navbar {
-    padding:0px;
-    -webkit-transition: background .8s ease-out,padding .8s ease-out;
-    -moz-transition: background .8s ease-out,padding .8s ease-out;
-    transition: background .8s ease-out,padding .8s ease-out;
-}
 
 
 /* CLASS FOR REMOVING PADDING IN NAVBAR*/
@@ -392,184 +366,6 @@ footer h5 {
 
 
 /*        ------------ admin stuff----------------------             */
-
-
-#adminbody {
-    margin-top: 300px;
-    background-color: #ffffff;
-}
-
-@media(min-width:768px) {
-    #adminbody {
-        margin-top: 50px;
-    }
-}
-#adminwrapper {
-    padding-left: 0;
-}
-
-#adminpage-wrapper {
-    width: 100%;
-    padding: 0;
-    background-color: #fff;
-}
-
-@media(min-width:768px) {
-    #adminwrapper {
-        padding-left: 225px;
-    }
-
-    #adminpage-wrapper {
-        padding: 0px;
-    }
-}
-
-/* Top Navigation */
-
-
-.top-nav {
-    padding: 0 0px;
-}
-
-.top-nav>li {
-    display: inline-block;
-    float: left;
-}
-
-.top-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    line-height: 20px;
-    color: #999;
-}
-
-.top-nav>li>a:hover,
-.top-nav>li>a:focus,
-.top-nav>.open>a,
-.top-nav>.open>a:hover,
-.top-nav>.open>a:focus {
-    color: #fff;
-    background-color: #000;
-}
-
-.top-nav>.open>.dropdown-menu {
-    float: left;
-    position: absolute;
-    margin-top: 0;
-    border: 1px solid rgba(0,0,0,.15);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #fff;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-
-.top-nav>.open>.dropdown-menu>li>a {
-    white-space: normal;
-}
-
-.ul.message-dropdown {
-    padding: 0;
-    max-height: 250px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-li.message-preview {
-    width: 275px;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-}
-
-li.message-preview>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-li.message-footer {
-    margin: 5px 0;
-}
-
-ul.alert-dropdown {
-    width: 200px;
-}
-
-/* Side Navigation */
-
-@media(min-width:768px) {
-    .side-nav {
-        position: fixed;
-        top: 51px;
-        left: 225px;
-        width: 225px;
-        margin-left: -225px;
-        border: none;
-        border-radius: 0;
-        overflow-y: auto;
-        background-color: #222;
-        bottom: 0;
-        overflow-x: hidden;
-        padding-bottom: 40px;
-    }
-
-    .side-nav>li>a {
-        width: 225px;
-    }
-
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        outline: none;
-        color: black !important;
-        background-color: rgb(253, 255, 253) !important;
-    }
-}
-
-.admin .side-nav>li>ul {
-    padding: 0;
-}
-
-.admin .side-nav>li>ul>li>a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    color: #999;
-}
-
-.admin .side-nav>li>ul>li>a:hover {
-    color: #fff;
-}
-
-
-.brows .btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.brows .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-.innerU{
-    height: 35px;
-
-}
-
-.mid{
-    margin-top: 60px;
-    height: 100%;
-    background-color: #E4E4E4;
-    border-radius: 10px;
-}
 
 
 

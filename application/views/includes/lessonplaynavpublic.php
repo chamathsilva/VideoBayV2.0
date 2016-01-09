@@ -23,35 +23,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="../user/userhome.php" class="navbar-brand logo">vb </a>
+        <a href="#" class="navbar-brand"> VideoBay </a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
-        <form class="navbar-form navbar-left" id = "search-form">
-            <div class="input-group input-group-sm" id = "search-form" style="max-width:360px;">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button id="serchbut" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="../../../index.php" >Home</a></li>
+            <li><a href="../../../about.php" >About</a></li>
+            <li><a href="../../../about.php">Help</a></li>
+            <li class="dropdown" style="padding-right: 20px;">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
+                <div class="dropdown-menu " style="padding: 15px; padding-bottom:  0px;">
+                    <div class="feederror">error password</div>
+                    <form method="post" action="login" accept-charset="UTF-8">
+                        <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
+                        <input style="margin-bottom: 15px;" type="password" placeholder="password" id="password" name="password">
+                        <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
+                        <label class="string optional" for="user_remember_me">Remember me</label>
+                        <input class="btn btn btn-success" type="submit" id="sign-in" value="Sign In">
+                    </form>
+
                 </div>
-            </div>
-        </form>
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="../user/userhome.php"><i class="glyphicon glyphicon-home"></i> Home</a>
-            </li>
-            <li>
-                <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i>requset</a>
+
             </li>
 
-        </ul>
-        <ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="../user/settings_new.php">Settings</a></li>
-                    <li><a href="../user/logout.php">Sign Out</a></li>
-
-                </ul>
-            </li>
         </ul>
     </nav>
 </div>

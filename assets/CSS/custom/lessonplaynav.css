@@ -230,5 +230,8 @@ h1,h2,h3 {
 
 .sidemenu{
     padding-left: 40px;
-    margin-top: 15px;
+}
+.ddmenu{
+    padding-right: 50px;
+
 }

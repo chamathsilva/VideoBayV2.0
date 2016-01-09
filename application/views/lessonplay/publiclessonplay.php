@@ -22,6 +22,9 @@
 
 
 
+    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplay.css">
+    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplaynav.css">
+
 
     <link rel="stylesheet" href="../../../assets/CSS/slider/sly.css">
     <!--slider-->
@@ -34,12 +37,13 @@
 </head>
 
 <body>
+<div class="col-sm-12">
+    <?php
+    include '../includes/navbarindex.php'
+    ?>
+</div>
 <div class="wrapper">
-    <div class="col-sm-12">
-        <?php
-        include '../includes/lessonplaynav.php'
-        ?>
-    </div>
+
 
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">

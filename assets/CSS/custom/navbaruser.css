@@ -49,9 +49,10 @@ hr {
 
 }
 
+
 .navbar-blue {
     border-width:0;
-    background-color:#3B5999;
+    background-color:#02a2f2;
     color:#ffffff;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
     top:0;
@@ -85,9 +86,7 @@ hr {
 
 #sidebar {
     padding:0px;
-    padding-top:30px;
-    margin-top: 20px;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    padding-top:15px;
 }
 
 #sidebar, #sidebar a, #sidebar-footer a {
@@ -104,7 +103,7 @@ hr {
     display:block;
     padding:3px;
     background-color:#fff;
-    color:#3B5999;
+    color:#02a2f2;
     height:28px;
     width:28px;
     margin:9px;
@@ -144,7 +143,7 @@ h1,h2,h3 {
 }
 
 #serchbut .btn-primary,.label-primary,.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus  {
-    background-color:#3B5999;
+    background-color:#02a2f2;
     color:#fffffe;
 }
 #serchbut .btn-default {
@@ -156,7 +155,7 @@ h1,h2,h3 {
 
 .badge{
     color:#02a2f2;
-    background-color:#3B5999;
+    background-color:#fff;
 }
 
 .badge:hover, .badge-inverse{
@@ -192,7 +191,7 @@ h1,h2,h3 {
         padding-top:20px;
     }
     .navbar-blue {
-        background-color:#3B5999;
+        background-color:#02a2f2;
         top:0;
         width:100%;
         position:relative;
@@ -232,8 +231,11 @@ h1,h2,h3 {
 }
 
 .dropdown-menu {
-    background-color: #3B5999;
+    background-color: #02a2f2;
 
+}
+#lg-menu{
+    padding-top: 30px;
 }
 
 
