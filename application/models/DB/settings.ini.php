@@ -2,6 +2,6 @@
 [SQL]
 host = localhost
 user = root
-password =root
+password =
 dbname = VB2
 
