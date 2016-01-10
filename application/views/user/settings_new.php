@@ -328,7 +328,7 @@
                                                     //load json data from server and output message
                                                     if (response.type == "text") {
                                                         $("#setteingFeedback").hide().html(response.text).slideDown("slow");
-                                                        $("#EmailLabele");.html(email).slideDown("slow");
+                                                        $("#EmailLabele").html(email).slideDown("slow");
                                                         document.getElementById("mailChangeForm").reset();
 
                                                     } else {
