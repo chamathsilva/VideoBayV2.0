@@ -1,9 +1,9 @@
 <?php
 require("../../models/DB/Db.class.php");
-session_start();
+
 
 $db = new Db();
-$user_id =  $_SESSION["user"];
+$user_id = filter_var($_POST["uid"],FILTER_SANITIZE_STRING);
 
 $lessonid = $db->query("SELECT lesson_id FROM recentlesson WHERE user_id = :uid ",array("uid"=>$user_id));
 $lessonid =  $lessonid[0]["lesson_id"];

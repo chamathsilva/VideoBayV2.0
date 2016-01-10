@@ -12,16 +12,16 @@
 
 
     //$user_id =  $_SESSION["user"];
-
-    $user_id = 13;
+    $user_id = filter_var($_POST["uid"],FILTER_SANITIZE_STRING);
+    //$user_id = 13;
 
     $lessons = $db->query("SELECT * FROM history WHERE user_id = :uid ORDER BY time_stamp" ,array("uid" => $user_id));
 
 
     foreach ($lessons as $row) {
         $id = $row['lesson_id'];
-        $time = $row['timestamp'];
-        $name = $row['lessonname'];
+        $time = $row['time_stamp'];
+        $name = $row['lesson_name'];
         $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
         /*
@@ -38,7 +38,7 @@
         echo '<div class="col-lg-3 col-md-4 col-xs-6 text2">';
         echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
         echo '<img class="img-responsive" src='."$src_path".' alt="">';
-        echo '<h4>'."$name".'</h4></a><span style="margin-right:10px;float:right" class="btn btn-danger btn-sm" onclick = "deleteWatchLater('.$id.')" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </span>'.'</h4>';
+        echo '<h4>'."$name".'</h4></a><span style="margin-right:10px;float:right" class="btn btn-danger btn-sm" onclick = "deleteHistory('.$id.')" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </span>'.'</h4>';
         echo'</a>';
         echo'</div>';
     }

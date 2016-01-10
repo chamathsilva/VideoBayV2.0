@@ -3,8 +3,8 @@
     require_once("../../controllers/DBfunctions/DbFunctions.php");
     //////////////////////// make isset
     $id = $_GET['id'];
-    $user_id =  $_SESSION["user"];
 
+    $user_id =61;
     $data = getLessonbyid($id); /// create return test
     $name = $data['name'];
     $lecture = $data['lecture'];
@@ -135,7 +135,7 @@
 
 
                                             <div class="col-sm-2 text-right">
-                                                <button  onclick="addWatchlater();" class="btn">Watch later</button>'
+                                                <button  onclick="addWatchlater()" class="btn">TTWatch later</button>'
 
                                             </div>
 
@@ -347,7 +347,7 @@
         alert("Hello! I am an alert box!!".concat(getCurTime()));
     }
     function addWatchlater() {
-        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
+        window.location.href = "../../controllers/lessonmanagement/addwatchLater.php?id=".concat(<?php echo $id;?>,"&time=",getCurTime(),"&uid=",<?php echo $user_id; ?> );
     }
 
 

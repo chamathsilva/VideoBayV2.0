@@ -3,7 +3,6 @@
 
 require("../../models/DB/Db.class.php");
 $db = new Db();
-session_start();
 
 if($_POST)
 

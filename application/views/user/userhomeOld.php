@@ -6,7 +6,7 @@
  */
     //FUNCTION HADANNA DB EKEN MEWA GANNA PULUWAN VENNA
 
-    $uid =13;
+    $uid =61;
     $item_per_page = 4; //need to put this configuration file
     require("../../models/DB/Db.class.php");
     $db = new Db();
@@ -120,9 +120,6 @@
     $(document).ready(function() {
 
 
-        //load more buttuon passe add karanne
-        $("#loadmore").html('<div align="center"><button class="load_more" id="load_more_button">load More</button> <div class="animation_image" style="display:none;"><img src="ajax-loader.gif"> Loading...</div> </div>');
-
         // This part replace with load more
         //load all the results to home page when load the page.
         //$("#results").prepend('<div class="loading-indication"><img src="../ajax-loader.gif" /> Loading...</div>');
@@ -131,7 +128,7 @@
 
         //load recent lesson to home page when load the page.
         $("#recentLesson").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-        $("#recentLesson").load("../../controllers/lessonmanagement/fetch_last_lesson.php");
+        $("#recentLesson").load("../../controllers/lessonmanagement/fetch_last_lesson.php",{'uid':<?php echo $uid;?>});
 
 
 
@@ -176,7 +173,7 @@
     function loadWatchLater(){
         fullbody.empty();
         fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-        fullbody.load("../../controllers/lessonmanagement/fetch_watch_later.php");
+        fullbody.load("../../controllers/lessonmanagement/fetch_watch_later.php",{'uid':<?php echo $uid;?>});
 
 
         //var recent = $("#recentLesson");
@@ -191,7 +188,7 @@
     function loadHistory(){
         fullbody.empty();
         fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-        fullbody.load("../../controllers/lessonmanagement/fetch_historyTemp.php");
+        fullbody.load("../../controllers/lessonmanagement/fetch_historyTemp.php",{'uid':<?php echo $uid;?>});
 
     }
 
@@ -201,11 +198,13 @@
         if (r == true) {
             var m_data = new FormData();
             m_data.append('id', id);
+            m_data.append( 'uid', <?php echo $uid; ?>);
+
 
             $("#results").html("chamath");
             //Ajax post data to server
             $.ajax({
-                url: '../../models/delete_watch_later.php',
+                url: '../../controllers/lessonmanagement/delete_watch_later.php',
                 data: m_data,
                 processData: false,
                 contentType: false,
@@ -214,12 +213,95 @@
                 success: function (response) {
                     //load json data from server and output message
                     if (response.type == "text") {
-                        $("#feedback").html(response.text);
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Delete complete"},
+                            {// settings
+                                type: "success",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
                     } else {
-                        $("#feedback").html(response.text);
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Some thing wrong try agin later "},
+                            {
+                                // settings
+                                type: "danger",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
 
                     }
-                    loadWatchLater()
+                    loadWatchLater();
+                }
+            });
+        }
+
+    }
+
+
+
+    function deleteHistory(id){
+        var r = confirm("Are you sure !" + id);
+        if (r == true) {
+            var m_data = new FormData();
+            m_data.append('id', id);
+            m_data.append( 'uid', <?php echo $uid; ?>);
+
+            //Ajax post data to server
+            $.ajax({
+                url: '../../controllers/lessonmanagement/delete_history.php',
+                data: m_data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    //load json data from server and output message
+                    if (response.type == "text") {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Delete complete"},
+                            {// settings
+                                type: "success",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+                    } else {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Some thing wrong try agin later "},
+                            {
+                                // settings
+                                type: "danger",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+
+                    }
+                    loadHistory();
+
                 }
             });
         }
@@ -231,10 +313,16 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
+            $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
             var track_click = 0; //track user click on "load more" button, righ now it is 0 click
 
             var total_pages = <?php echo $total_pages; ?>;
             $('#results').load("../../controllers/lessonmanagement/fetch_lessonsUser.php", {'page':track_click}, function() {track_click++;}); //initial data to load
+
+
+            //load more buttuon passe add karanne
+            $("#loadmore").html('<div align="center"><button class="load_more" id="load_more_button">load More</button> <div class="animation_image" style="display:none;"><img src="../../../assets/images/ajax-loader.gif"> Loading...</div> </div>');
+
 
             $(".load_more").click(function (e) { //user clicks on button
 

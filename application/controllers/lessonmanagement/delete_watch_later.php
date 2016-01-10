@@ -21,7 +21,7 @@ if($_POST)
 
     //Sanitize input data using PHP filter_var().
     $id	= filter_var($_POST["id"], FILTER_SANITIZE_STRING);
-    $user_id = $_SESSION["user"];
+    $user_id = filter_var($_POST["uid"],FILTER_SANITIZE_STRING);
 
 
     $result=  $db->query("DELETE FROM watchlater WHERE user_id = :uid and lesson_id = :lid ",array("uid"=>$user_id,"lid"=>$id));
