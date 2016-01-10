@@ -65,6 +65,9 @@
     <!--slider-->
 
 
+    <link rel="stylesheet" href="../../../public/css/animate.css">
+
+
 </head>
 
 <body>
@@ -84,13 +87,15 @@
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
-                    <li><a ><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
-                    <li><a ><i class="glyphicon glyphicon-paperclip"></i> Categories</a></li>
+                    <li class="active"><a href="../user/userhomeOld.php"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
+                    <li><a onclick="loadWatchLater()"><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
+                    <li><a onclick="loadHistory()"><i class="glyphicon glyphicon-paperclip"></i> History</a></li>
                 </ul>
 
+                <div id="maintopic">
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="sidemenu text4">Main Topics</li>
+
+                    <li class="sidemenu text4" >Main Topics</li>
                     <?php
                     foreach($topics as $row){
                         $start_time = $row['start_time'];
@@ -105,8 +110,9 @@
                     ?>
 
                 </ul>
+                </div>
 
-                <ul class="nav hidden-xs">
+                <ul class="nav hidden-xs" id="watchNext" >
                     <div class="row">
                         <li class="sidemenu text4" style="margin-bottom: 5px">Watch Next</li>
                         <div id="watch_next"></div>
@@ -118,9 +124,9 @@
             <!-- main right col -->
             <div class="column col-sm-10" id="main">
 
-                <div class="full ">
+                <div id = "fullBody" class="full">
                     <div class="col-sm-12 text">
-                        <div id="results">Hello</div>
+                        <div id="results"></div>
                     </div>
                     <div id = "lessonplay" class = "hideee" class="container-fluid">
                         <div class="row">
@@ -147,14 +153,10 @@
                                             </div>
 
 
-<<<<<<< HEAD
+
                                             <div class="col-sm-2" style="padding-top: 10px;">
                                                 <button  onclick="addWatchlater();" class="btn">Watch later</button>
-=======
-                                            <div class="col-sm-2 text-right">
-                                                <button  onclick="addWatchlater()" class="btn">TTWatch later</button>'
 
->>>>>>> 7470c4ad46519c6e7a4e0646adb3e1128953b0b7
                                             </div>
 
 
@@ -251,7 +253,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-
+<script src="../../../public/js/bootstrap-notify.min.js"></script>
 
 
 
@@ -307,6 +309,9 @@
 
 
 <script type="text/javascript">
+    var fullbody = $("#fullBody");
+    var maintopic = $("#maintopic");
+    var watchnext = $("#watchNext");
     $(document).ready(function() {
 
 
@@ -338,25 +343,38 @@
             $("#serchbut").click();
 
         });
+
         // this is for mouse click event
+       // $("#serchbut").click(function(){
+         //   $( "#lessonplay" ).empty();
+          //  $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+           // var search_keyword = document.getElementById("srch-term").value;
+           // alert(search_keyword);
+           // $("#results").load("../../controllers/lessonmanagement/searchLessons.php",{'key':search_keyword});
+
+       // });
+
+
         $("#serchbut").click(function(){
-            $( "#lessonplay" ).empty();
-            $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+            fullbody.empty();
+            fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
             var search_keyword = document.getElementById("srch-term").value;
-            alert(search_keyword);
-            $("#results").load("../../controllers/lessonmanagement/searchLessons.php",{'key':search_keyword});
+            fullbody.load("../../controllers/lessonmanagement/searchLessons.php",{'srch-term':search_keyword});
 
         });
-
 
 
     });
 </script>
 
 <script>
+
+    function send_request(){
+        $( "#send_request" ).click();
+    }
     function myFunction() {
-        setCurTime(60);
-        alert("Hello! I am an alert box!!".concat(getCurTime()));
+        //setCurTime(60);
+        //alert("Hello! I am an alert box!!".concat(getCurTime()));
     }
     function addWatchlater() {
         window.location.href = "../../controllers/lessonmanagement/addwatchLater.php?id=".concat(<?php echo $id;?>,"&time=",getCurTime(),"&uid=",<?php echo $user_id; ?> );
@@ -364,6 +382,246 @@
 
 
 
+</script>
+
+
+<script>
+
+    function send_request(){
+        $( "#send_request" ).click();
+        //confirm("Are you sure !");
+        //$("#comment").html("Watch Later")
+
+
+    }
+
+    function loadWatchLater(){
+        fullbody.empty();
+        fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        fullbody.load("../../controllers/lessonmanagement/fetch_watch_later.php",{'uid':<?php echo $user_id;?>});
+
+
+        //var recent = $("#recentLesson");
+        //recent.empty();
+        //$("#loadmore").empty();
+        //$("#result_wrap").empty();
+        //$("#topic").html("Watch Later");
+        //recent.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        //recent.load("../../controllers/lessonmanagement/fetch_watch_later.php");
+        maintopic.slideUp();
+        watchnext.slideUp();
+    }
+
+    function loadHistory(){
+        fullbody.empty();
+        fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        fullbody.load("../../controllers/lessonmanagement/fetch_historyTemp.php",{'uid':<?php echo $user_id;?>});
+        maintopic.slideUp();
+        watchnext.slideUp();
+    }
+
+
+    function deleteWatchLater(id){
+        var r = confirm("Are you sure !" + id);
+        if (r == true) {
+            var m_data = new FormData();
+            m_data.append('id', id);
+            m_data.append( 'uid', <?php echo $user_id; ?>);
+
+
+            $("#results").html("chamath");
+            //Ajax post data to server
+            $.ajax({
+                url: '../../controllers/lessonmanagement/delete_watch_later.php',
+                data: m_data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    //load json data from server and output message
+                    if (response.type == "text") {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Delete complete"},
+                            {// settings
+                                type: "success",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+                    } else {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Some thing wrong try agin later "},
+                            {
+                                // settings
+                                type: "danger",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+
+                    }
+                    loadWatchLater();
+                }
+            });
+        }
+
+    }
+
+
+
+    function deleteHistory(id){
+        var r = confirm("Are you sure !" + id);
+        if (r == true) {
+            var m_data = new FormData();
+            m_data.append('id', id);
+            m_data.append( 'uid', <?php echo $user_id; ?>);
+
+            //Ajax post data to server
+            $.ajax({
+                url: '../../controllers/lessonmanagement/delete_history.php',
+                data: m_data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    //load json data from server and output message
+                    if (response.type == "text") {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Delete complete"},
+                            {// settings
+                                type: "success",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+                    } else {
+                        //$("#feedback").html(response.text);
+                        $.notify({
+                                icon: 'glyphicon glyphicon-star',
+                                message: "Some thing wrong try agin later "},
+                            {
+                                // settings
+                                type: "danger",
+                                delay: 3000,
+                                animate: {
+                                    enter: 'animated fadeInDown',
+                                    exit: 'animated fadeOutUp'
+                                }
+
+                            });
+
+                    }
+                    loadHistory();
+
+                }
+            });
+        }
+
+    }
+
+</script>
+
+
+
+<script>
+    $(document).ready(function() {
+
+        $("#send_request").click(function() {
+
+            $("#request_form").validate({
+                rules:{
+                    topic:{
+                        required: true
+
+                    },
+                    comment: {
+                        required: true
+                    }
+
+                },
+
+
+                //if form is valid do this
+                submitHandler: function(form) {
+
+                    //get input field values data to be sent to server
+                    var m_data = new FormData();
+                    m_data.append( 'topic',  document.getElementById("topic" ).value);
+                    m_data.append( 'comment', document.getElementById("comment").value);
+                    m_data.append( 'uid', <?php echo $user_id; ?>);
+                    document.getElementById("request_form").reset();
+
+                    //Ajax post data to server
+                    $.ajax({
+                        url: '../../controllers/massegesmanagement/send_request.php',
+                        data: m_data,
+                        processData: false,
+                        contentType: false,
+                        type: 'POST',
+                        dataType:'json',
+                        success: function (response) {
+                            //load json data from server and output message
+                            if (response.type == "text") {
+                                //$("#feedback").html(response.text);
+                                $.notify({
+                                        icon: 'glyphicon glyphicon-star',
+                                        message: "Your massege has send"},
+                                    {// settings
+                                        type: "success",
+                                        delay: 3000,
+                                        animate: {
+                                            enter: 'animated fadeInDown',
+                                            exit: 'animated fadeOutUp'
+                                        }
+
+                                    });
+
+                            } else {
+                                //$("#feedback").html(response.text);
+                                $.notify({
+                                        icon: 'glyphicon glyphicon-star',
+                                        message: "Thank you your feedback! Massage has not send "},
+                                    {
+                                        // settings
+                                        type: "danger",
+                                        delay: 3000,
+                                        animate: {
+                                            enter: 'animated fadeInDown',
+                                            exit: 'animated fadeOutUp'
+                                        }
+
+                                    });
+
+                            }
+                            $('#myModalrequest').modal('hide')
+
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
+    });
 </script>
 
 

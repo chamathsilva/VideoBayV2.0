@@ -32,7 +32,7 @@ $lessons2=  $db->query("SELECT * FROM lesson INNER JOIN subjects ON lesson.lesso
 foreach ($lessons1 as $row) {
     $id = $row['lesson_id'];
     $name = $row['name'];
-    $src_path = 'data/uploaded_lessons/'.$id.'/slides/1.jpg';
+    $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
     echo '<div class="col-lg-3 col-md-4 col-xs-6 ">';
     echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
@@ -47,7 +47,7 @@ foreach ($lessons1 as $row) {
 foreach ($lessons2 as $row) {
     $id = $row['lesson_id'];
     $name = $row['name'];
-    $src_path = 'data/uploaded_lessons/'.$id.'/slides/1.jpg';
+    $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
     echo '<div class="col-lg-3 col-md-4 col-xs-6 ">';
     echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
