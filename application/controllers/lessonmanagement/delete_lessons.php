@@ -23,7 +23,7 @@ if($_POST)
     $result=  $db->query("DELETE FROM lesson WHERE lesson_id = :lid ",array("lid"=>$id));
 
 
-    $path = '../../../data/uploads/'.$id;
+    $path = '../../../data/uploaded_lessons/'.$id;
 
     function FolderDelete($path)
     {

@@ -124,12 +124,6 @@ insertresentLesson($id,$user_id);
                                             </div>
 
 
-                                            <div class="col-sm-2 " style="padding-top: 10px;">
-                                                <button  onclick="addWatchlater();" class="btn">Watch later</button>
-
-                                            </div>
-
-
                                             <div class="col-sm-4 col-xs-2">
                                                 <div class="lesson-topic">
                                                     <i class="fa fa-graduation-cap"></i>

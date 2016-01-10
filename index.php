@@ -55,7 +55,7 @@
                         <h1><strong>UCSC VideoBay</strong></h1>
                         <div class="description">
                             <p>
-                                UCSS VideoBay is a web based system which creates a learning environment
+                                UCSC VideoBay is a web based system which creates a learning environment
                                 for the students and lecturers and it also creates
                                 a virtual bridge to link students and lectures.
                             </p>

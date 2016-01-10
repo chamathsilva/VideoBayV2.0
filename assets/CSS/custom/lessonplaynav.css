@@ -61,7 +61,7 @@ hr {
     border-width:0;
     background-color:#02a2f2;
     color:#ffffff;
-    font-family:arial,sans-serif;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
     top:0;
     position:fixed;
     width:inherit;
@@ -236,7 +236,6 @@ h1,h2,h3 {
 
 }
 
-
 .navbar-inverse {
      background-image: none;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
@@ -246,4 +245,5 @@ h1,h2,h3 {
 }
 .navbar-inverse .navbar-header .navbar-brand {
     color: #ffffff;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif
 }
