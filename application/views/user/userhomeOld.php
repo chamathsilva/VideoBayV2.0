@@ -55,8 +55,13 @@
 
 <body>
     <div class="wrapper">
+        <div class="col-sm-12 " id="main">
+            <?php
+            include '../includes/userhomenavbar.php'
+            ?>
+        </div>
         <div class="box">
-            <div class="row row-offcanvas row-offcanvas-left">
+            <div class="row row-offcanvas row-offcanvas-left" style="margin-top: 30px;">
                 <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
                 <!-- side bar -->
                 <?php
@@ -66,16 +71,11 @@
                 <!-- main right col -->
                 <div class="column col-sm-10 col-xs-11" id="main">
 
-                    <?php
-                        include '../includes/userhomenavbar.php'
-                    ?>
-
-                    <!-- new function -->
                     <div id = "fullBody" class="full">
 
                         <div id="feedback"> </div>
 
-                        <div class="col-sm-12 text">
+                        <div class="col-sm-12 col-xs-12  text">
                             <h3 id="topic">Recent view</h3>
                             <div id="recentLesson"></div>
                         </div>

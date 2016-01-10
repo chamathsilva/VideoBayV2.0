@@ -238,5 +238,6 @@ h1,h2,h3 {
     padding-top: 30px;
 }
 
-
-
+.col-sm-12{
+    padding-left: 0px;
+}

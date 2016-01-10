@@ -46,3 +46,4 @@
     <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
     <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
     <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+</ul>

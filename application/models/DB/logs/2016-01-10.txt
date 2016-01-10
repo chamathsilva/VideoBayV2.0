@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Time : 04:33:12
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_name' cannot be null
 Raw SQL : INSERT INTO feedback (topic,comment,user_id,time_stamp) VALUES(:topic,:comment,:uid,CURRENT_TIMESTAMP)
@@ -14,7 +14,3 @@ Raw SQL : INSERT INTO feedback (topic,comment,user_id,time_stamp) VALUES(:topic,
 Time : 04:32:13
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_name' cannot be null
 Raw SQL : INSERT INTO feedback (topic,comment,user_id,time_stamp) VALUES(:topic,:comment,:uid,CURRENT_TIMESTAMP)
-=======
-Time : 08:28:00
-SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
->>>>>>> origin/master
