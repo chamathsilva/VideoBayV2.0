@@ -75,6 +75,19 @@
                     </div>
                 </div>
 
+                <div class="form-group" >
+                    <label class="control-label col-sm-2" for="OtherSubjects">Other Subjects </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="othersubjects" id="othersubjects" placeholder="Enter Other subjects">
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label class="control-label col-sm-2" for="SearchTags">Search Tags </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="searchtags" id="searchtags" placeholder="Enter Tags To Search">
+                    </div>
+                </div>
 
 
                 <div class="form-group">
@@ -130,6 +143,7 @@
 
 
 <script type="text/javascript">
+    //check which field is required and validate them
 
     $("#MyUploadForm").validate({
         rules: {
@@ -166,11 +180,20 @@
             }
 
         },
+        //if there are errors show messages
         messages:{
             "subject[]":"Please select at least one checkbox",
             "FileInput1":{
                 required: "Please select mp4 file",
                 extension:"Invalis extension Please select mp4 file "
+            },
+            "files[]":{
+                required: "Please select png files",
+                // extension:"Invalis extension Please select mp4 file "
+            },
+            "FileInput3":{
+                required: "Please select txt file",
+                // extension:"Invalis extension Please select mp4 file "
             }
 
         },
@@ -189,8 +212,6 @@
 
     function upload_form(){
         $('#MyUploadForm').ajaxSubmit(options);
-        //  $('#MyUploadForm').submit(function() {
-        // $(this).ajaxSubmit(options);
         // always return false to prevent standard browser submit and page navigation
         return false;
     }
@@ -209,6 +230,7 @@
 
 
     function beforeSubmit(){
+        //Check form is valid or not in the front end
         if (!$('#MyUploadForm').valid()) {
             alert("form is invalid");
             return false;
@@ -231,7 +253,7 @@
     }
 
     //function to format bites bit.ly/19yoIPO
-    function bytesToSize(bytes) {
+  / function bytesToSize(bytes) {
         var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
         if (bytes == 0) return '0 Bytes';
         var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
