@@ -3,5 +3,5 @@
 host = localhost
 user = root
 password =
-dbname = VB2
+dbname = vb4
 

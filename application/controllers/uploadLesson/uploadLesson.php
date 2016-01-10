@@ -43,10 +43,10 @@ if (isset($_FILES["files"])) {
         switch (strtolower($_FILES['files']['type'][$i])) {
 
 //allowed file type is png
-            case 'image/png':
+            case 'image/jpeg':
                 break;
             default:
-                die('Unsupported File Please upload png file!'); //output error
+                die('Unsupported File Please upload jpeg/png file!'); //output error
         }
     }
 }
@@ -87,9 +87,9 @@ $lessons = $db->query("INSERT INTO lesson(name, description, lecture) VALUES (:n
 $lessonID=$db->lastInsertId();
 
 //upload files separately into the unique folder of the uploads folder
-$UploadDirectory1 = '../../../data/uploads/' . $lessonID . '/' . 'videos/';
-$UploadDirectory2 = '../../../data/uploads/'.$lessonID.'/'.'slides/';
-$UploadDirectory3 = '../../../data/uploads/'.$lessonID.'/';
+$UploadDirectory1 = '../../../data/uploaded_lessons/' . $lessonID . '/' . 'videos/';
+$UploadDirectory2 = '../../../data/uploaded_lessons/'.$lessonID.'/'.'slides/';
+$UploadDirectory3 = '../../../data/uploaded_lessons/'.$lessonID.'/';
 
 //get file name
 $File_Name = strtolower($_FILES['FileInput1']['name']);

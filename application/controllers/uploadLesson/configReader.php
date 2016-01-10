@@ -7,7 +7,7 @@ function readConfigFile($id,$name){
     $lineCount=0;
     $newLine=0;
     //open uploaded file from the correct destination
-    $myfile = fopen("../../../data/uploads/$id/$name", "r") or die("Unable to open file!");
+    $myfile = fopen("../../../data/uploaded_lessons/$id/$name", "r") or die("Unable to open file!");
 
     //read until end of the file
     while(!feof($myfile)){

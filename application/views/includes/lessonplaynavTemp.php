@@ -15,7 +15,7 @@
  * Time: 12:04 AM
  */ ?>
 
-<div class="navbar navbar-blue  navbar-inverse navbar-static-top">
+<div class="navbar navbar-blue navbar-static-top">
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">

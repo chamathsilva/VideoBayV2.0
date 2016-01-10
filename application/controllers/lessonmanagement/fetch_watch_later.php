@@ -12,8 +12,8 @@ session_start();
 
 
 //$user_id =  $_SESSION["user"];
-
-$user_id = 13;
+$user_id = filter_var($_POST["uid"],FILTER_SANITIZE_STRING);
+//$user_id = 13;
 
 $lessons = $db->query("SELECT * FROM `watchlater` WHERE `user_id` = :uid",array("uid" =>$user_id));
 

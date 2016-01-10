@@ -1,10 +1,27 @@
 <?php
     session_start();
     require_once("../../controllers/DBfunctions/DbFunctions.php");
+
+    //login testing
+    $dbh = $db->getPurePodo();
+    include("../../models/PHPAuth/Config.php");
+    include("../../models/PHPAuth/Auth.php");
+
+    $config = new PHPAuth\Config($dbh);
+    $auth   = new PHPAuth\Auth($dbh, $config);
+
+    if (!$auth->isLogged()) {
+        header('HTTP/1.0 403 Forbidden');
+        echo "Forbidden";
+        exit();
+    }
+    $userhash = $auth->getSessionHash();
+    $user_id= $auth->getSessionUID($userhash);
+    //Die($userhash."----".$uid);
     //////////////////////// make isset
     $id = $_GET['id'];
-    $user_id =  $_SESSION["user"];
 
+    //$user_id =61;
     $data = getLessonbyid($id); /// create return test
     $name = $data['name'];
     $lecture = $data['lecture'];
@@ -130,8 +147,14 @@
                                             </div>
 
 
+<<<<<<< HEAD
                                             <div class="col-sm-2" style="padding-top: 10px;">
                                                 <button  onclick="addWatchlater();" class="btn">Watch later</button>
+=======
+                                            <div class="col-sm-2 text-right">
+                                                <button  onclick="addWatchlater()" class="btn">TTWatch later</button>'
+
+>>>>>>> 7470c4ad46519c6e7a4e0646adb3e1128953b0b7
                                             </div>
 
 
@@ -336,7 +359,7 @@
         alert("Hello! I am an alert box!!".concat(getCurTime()));
     }
     function addWatchlater() {
-        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
+        window.location.href = "../../controllers/lessonmanagement/addwatchLater.php?id=".concat(<?php echo $id;?>,"&time=",getCurTime(),"&uid=",<?php echo $user_id; ?> );
     }
 
 

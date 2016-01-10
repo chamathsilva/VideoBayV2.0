@@ -25,6 +25,8 @@ $key = ($_POST['g-recaptcha-response']);
 
 
 
+;
+
 
 $params = array("firstName" => "$firstname","Lastname" => "$lastname", "username" => "$username","type" => '1');
 
@@ -35,6 +37,8 @@ if ($result['error']){
     // if registration not complete
     $output = json_encode(array("typee" => 1, "resultt" => $result['message'] ));
 }else{
+    $uid = $auth->getUID($email);
+    $db ->query("INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')",array("uid" => $uid));
     $output = json_encode(array("typee" => 0, "resultt" => $result['message'] ));
 }
 
