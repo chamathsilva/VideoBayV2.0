@@ -85,10 +85,9 @@ html{
 
 /***** button style *****/
 button.btn {
-    height: 50px;
+    height: 35px;
     width: 100px;
-    margin: 0;
-    padding: 0 20px;
+    padding: 0px 10px;
     vertical-align: middle;
     background: #19b9e7;
     border: 0;
@@ -281,6 +280,14 @@ footer h5 {
     margin-bottom: 50px
 }
 
+.text4{
+    color: #fff;
+    padding: 0px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    background-color: gray;
+
+}
+
 /*Slid navigator */
 
 .slidNavigator{
@@ -323,8 +330,9 @@ footer h5 {
 /* lessons play topic and like bar */
 
 .detail-panal {
-    padding: 1px 1px 1px 4px;
+
     background: #fff;
+    height: 50px;
     -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
     text-align: left;
 }
@@ -335,9 +343,7 @@ footer h5 {
 
 }
 
-#panel{
-    display: none;
-}
+
 
 #flip{
     padding: 12px 25px 10px 25px;

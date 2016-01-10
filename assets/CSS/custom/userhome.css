@@ -1,5 +1,5 @@
 body {
-    background-color:  #525453;
+
     height: 100%;
 }
 html{
@@ -390,41 +390,6 @@ footer h5 {
 
 
 
-
-/*        ------------ admin stuff----------------------             */
-
-
-#adminbody {
-    margin-top: 300px;
-    background-color: #ffffff;
-}
-
-@media(min-width:768px) {
-    #adminbody {
-        margin-top: 50px;
-    }
-}
-#adminwrapper {
-    padding-left: 0;
-}
-
-#adminpage-wrapper {
-    width: 100%;
-    padding: 0;
-    background-color: #fff;
-}
-
-@media(min-width:768px) {
-    #adminwrapper {
-        padding-left: 225px;
-    }
-
-    #adminpage-wrapper {
-        padding: 0px;
-    }
-}
-
-/* Top Navigation */
 
 
 .top-nav {
