@@ -44,98 +44,89 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-
-            $("#userUploadForm").validate({
-                rules: {
-                    FileInput1: {
-                        required: true
-                        //extension: "mp4",
-                    }
-
-                },
-                messages:{
-
-                    "FileInput1":{
-                        required: "Please select a file"
-                        // extension:"Invalid extension Please select mp4 file "
-                    }
-
-                },
-
-            });
-
-            var options = {
-                target:   '#output',   // target element(s) to be updated with server response
-                beforeSubmit:  beforeSubmit,  // pre-submit callback
-                success:       afterSuccess,  // post-submit callback
-                uploadProgress: OnProgress, //upload progress callback
-                resetForm: true        // reset the form after successful submit
-
-
-            };
-
-            function upload_form(){
-                $('#userUploadForm').ajaxSubmit(options);
-                //  $('#MyUploadForm').submit(function() {
-                // $(this).ajaxSubmit(options);
-                // always return false to prevent standard browser submit and page navigation
-                return false;
-            }
-
-
-            //function after succesful file upload (when server response)
-            function afterSuccess()
-            {
-                $('#submit_btn').show(); //hide submit button
-                $('#loading-img').hide(); //hide submit button
-                $('#progressbox').delay( 1000 ).fadeOut(); //hide progress bar
-
-            }
-
-            //function to check file size before uploading.
-
-
-            function beforeSubmit(){
-                if (!$('#userUploadForm').valid()) {
-                    alert("form is invalid");
-                    return false;
-                }
-                alert("form is valid");
-            }
-
-
-            //progress bar function
-            function OnProgress(event, position, total, percentComplete)
-            {
-                //Progress bar
-                $('#progressbox').show();
-                $('#progressbar').width(percentComplete + '%') //update progressbar percent complete
-                $('#statustxt').html(percentComplete + '%'); //update status text
-                if(percentComplete>50)
-                {
-                    $('#statustxt').css('color','#000'); //change status text to white after 50%
-                }
-            }
-
-            //function to format bites bit.ly/19yoIPO
-            function bytesToSize(bytes) {
-                var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-                if (bytes == 0) return '0 Bytes';
-                var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-                return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-            }
-
-
-
-        </script>
-
-        <ul>
-            <li><a href="logout.php">Log out</a></li>
-            <li><a href="update.php"> Update details</a></li>
-            <li><a href="changepassword.php">Change password</a></li>
-        </ul>
     </div>
-
-
 </div><!--do not remove -->
+
+
+<script type="text/javascript">
+
+    $("#userUploadForm").validate({
+        rules: {
+            FileInput1: {
+                required: true
+
+            }
+
+        },
+        messages:{
+
+            "FileInput1":{
+                required: "Please select a file"
+                // extension:"Invalid extension Please select mp4 file "
+            }
+
+        }
+
+    });
+
+    var options = {
+        target:   '#output',   // target element(s) to be updated with server response
+        beforeSubmit:  beforeSubmit,  // pre-submit callback
+        success:       afterSuccess,  // post-submit callback
+        uploadProgress: OnProgress, //upload progress callback
+        resetForm: true        // reset the form after successful submit
+
+
+    };
+
+    function upload_form(){
+        $('#userUploadForm').ajaxSubmit(options);
+        return false;
+    }
+
+
+    //function after succesful file upload (when server response)
+    function afterSuccess()
+    {
+        $('#submit_btn').show(); //hide submit button
+        $('#loading-img').hide(); //hide submit button
+        $('#progressbox').delay( 1000 ).fadeOut(); //hide progress bar
+
+    }
+
+    //function to check file size before uploading.
+
+
+    function beforeSubmit(){
+        if (!$('#userUploadForm').valid()) {
+            alert("form is invalid");
+            return false;
+        }
+        alert("form is valid");
+    }
+
+
+    //progress bar function
+    function OnProgress(event, position, total, percentComplete)
+    {
+        //Progress bar
+        $('#progressbox').show();
+        $('#progressbar').width(percentComplete + '%'); //update progressbar percent complete
+        $('#statustxt').html(percentComplete + '%'); //update status text
+        if(percentComplete>50)
+        {
+            $('#statustxt').css('color','#000'); //change status text to white after 50%
+        }
+    }
+
+    //function to format bites bit.ly/19yoIPO
+    function bytesToSize(bytes) {
+        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        if (bytes == 0) return '0 Bytes';
+        var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+        return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+    }
+
+
+
+</script>
