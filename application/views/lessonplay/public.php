@@ -1,22 +1,22 @@
 <?php
-    session_start();
-    require_once("../../controllers/DBfunctions/DbFunctions.php");
-    //////////////////////// make isset
-    $id = $_GET['id'];
-    $user_id =  $_SESSION["user"];
+session_start();
+require_once("../../controllers/DBfunctions/DbFunctions.php");
+//////////////////////// make isset
+$id = $_GET['id'];
+$user_id =  13;
 
-    $data = getLessonbyid($id); /// create return test
-    $name = $data['name'];
-    $lecture = $data['lecture'];
-    $no_of_slid = $data['no_of_slides'];
-    $temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
-    $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
+$data = getLessonbyid($id); /// create return test
+$name = $data['name'];
+$lecture = $data['lecture'];
+$no_of_slid = $data['no_of_slides'];
+$temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
+$src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
 
-    $slid_data = getAllBySortOrder($id);
-    $topics = getTpoicsById($id);
+$slid_data = getAllBySortOrder($id);
+$topics = getTpoicsById($id);
 
-    //Update history //recent // staticstics
-    insertresentLesson($id,$user_id);
+//Update history //recent // staticstics
+insertresentLesson($id,$user_id);
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
 
 
     <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplay.css">
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplaynav.css">
+    <link rel="stylesheet" href="../../../assets/CSS/custom/indexstyle.css">
     <link rel="stylesheet" href="../../../assets/CSS/slider/sly.css">
     <!--slider-->
 
@@ -54,9 +54,9 @@
 <div class="wrapper">
     <div class="col-sm-12">
         <?php
-        include '../includes/lessonplaynav.php'
+        include '../includes/lessonplaynavTemp.php'
         ?>
-     </div>
+    </div>
 
     <div class="box" >
         <div class="row row-offcanvas row-offcanvas-left">
@@ -64,12 +64,6 @@
             <div class="column col-sm-2 col-xs-2 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
-                </ul>
-
-                <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
-                    <li><a ><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
-                    <li><a ><i class="glyphicon glyphicon-paperclip"></i> Categories</a></li>
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
@@ -143,7 +137,7 @@
                                             <div class="col-sm-6">
                                                 <div class="lesson-topic">
                                                     <i class="fa fa-graduation-cap"></i>
-                                                        <?php echo $lecture; ?>
+                                                    <?php echo $lecture; ?>
                                                 </div>
                                             </div>
 
@@ -195,9 +189,7 @@
                                         </div>
 
                                         <div class="scrollbar">
-                                            <div class="handle">
-
-                                            </div>
+                                            <div class="handle"></div>
                                         </div>
 
 

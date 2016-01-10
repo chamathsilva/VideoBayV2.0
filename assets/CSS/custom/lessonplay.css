@@ -1,6 +1,7 @@
 body {
     background-color:  #525453;
     height: 100%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
 }
 html{
     height: 100%;
@@ -151,16 +152,7 @@ button.btn.like{
 
 }
 
-/* NAVBAR STYLE */
 
-
-
-/* ADDED PADDING IN NAVBAR */
-
-
-
-
-/* CLASS FOR REMOVING PADDING IN NAVBAR*/
 
 
 .navbar-pad-original {

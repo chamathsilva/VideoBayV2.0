@@ -22,6 +22,7 @@
 </head>
 <body>
 <div class="wrapper">
+
     <?php include '../includes/navbarreg.php' ?>
 
     <div class="box" >
@@ -51,7 +52,7 @@
 
                 <ul class="nav hidden-xs">
                     <div class="row">
-                        <li style="margin-bottom: 15px; margin-top:10px; ">Watch Next</li>
+                        <li style="margin-top:10px; ">Watch Next</li>
                         <div id="watch_next"></div>
                     </div>
 
@@ -61,9 +62,9 @@
             <!-- main right col -->
             <div class="column col-sm-10 col-xs-10" id="main">
 
-                <div class="full ">
+                <div class="full">
                     <div class="col-sm-12 text">
-                        <div id="results">Hello</div>
+                        <div id="results"></div>
                     </div>
 
 
@@ -79,7 +80,10 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <img id="xx" class="img-responsive" src="<?php/* echo $src_path.'1.JPG';*/?>" alt="Wrong link" min-width="100%" height="auto" >
+                                <img id="xx" class="img-responsive" src="../../../assets/images/2.JPG" alt="Wrong link" min-width="100%" height="auto" >
+                                <!--<img id="xx" class="img-responsive" src="<?php/* echo $src_path.'1.JPG';*/?> " alt="Wrong link" min-width="100%" height="auto" >-->
+
+                            </div>
                             </div>
 
                             <div class=" col-sm-12">
@@ -129,7 +133,9 @@
 
                                                     <li>
                                                         <article data-start="<?php/* echo $start_time; */?>" data-end="<?php/* echo $end_time; */?>">
-                                                            <a hreff="<?php/* echo $index; */?>"><img src=" <?php/* echo $src_path.$index.'.jpg' */?> " height="140"  onclick="setCurTime(<?php/* echo $start_time */?>)"></a>
+                                                       <!--     <a hreff="<?php/* echo $index; */?>"><img src=" ../../assets/images/3.JPG <?php/* echo $src_path.$index.'.jpg' */?> " height="140"  onclick="setCurTime(<?php/* echo $start_time */?>)"></a>-->
+                                                            <a hreff="<?php/* echo $index; */?>"><img src=" ../../../assets/images/3.JPG" height="140"  onclick="setCurTime(<?php/* echo $start_time */?>)"></a>
+
                                                         </article>
                                                     </li>
                                                     <?php/*
