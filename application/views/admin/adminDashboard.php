@@ -26,18 +26,21 @@
 
         <div class="col-sm-12">
             <div class="clearfix " style="margin-left: 100px; margin-top: 40px;">
-                <div id="pinkcircle" style="margin-left: 50px; data-text="work" data-percent="65" class="red "></div>
-                <div id="bluecircle" style="margin-left: 50px; data-text="rest" data-percent="87" class="purple"></div>
-                <div id="bluecircle" style="margin-left: 50px; data-text="play" data-percent="30" class=" blue"></div>
-                <div id="bluecircle" style="margin-left: 50px; data-text="play" data-percent="30" class=" blue"></div>
-                <div id="clock" style="margin-left: 50px;class="purple "></div>
+                <div id="clock" style="margin-left: 50px;"class="red "></div>
+                <div id="UCSC" style="margin-left: 50px;"class="yellow "></div>
+                <div id="BIT" style="margin-left: 50px;"class="orange "></div>
+                <div id="GENARAL" style="margin-left: 50px;"class="purple "></div>
+                <div id="ACTIVE" style="margin-left: 50px;"class="BLUE "></div>
             </div>
         </div>
 
     </div>
 
 </div><!--do not remove -->
+<?php
 
+    require_once("../../controllers/DBfunctions/DbFunctions.php");
+?>
 
 <script>
     $("#graph").load("../../controllers/statics/graph_data.php");
@@ -47,11 +50,24 @@
 
         $("#clock").percircle({
             perclock: true
+
         });
 
-        $("#custom").percircle({
-            text:"custom",
-            percent: 27
+
+        $("#UCSC").percircle({
+            percent: <?php echo getPresentage(getUCSCUserCount(),getFullUserCount());?>
+        });
+
+        $("#BIT").percircle({
+            percent: <?php echo getPresentage(getBITUserCount(),getFullUserCount());?>
+        });
+
+        $("#GENARAL").percircle({
+            percent: <?php echo getPresentage(getGeneralserCount(),getFullUserCount());?>
+        });
+
+        $("#ACTIVE").percircle({
+            percent: <?php echo getPresentage(getCurrentActiveUsers(),getFullUserCount());?>
         });
     });
 </script>

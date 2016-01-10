@@ -71,16 +71,50 @@
 
     }
 
-    function selet(){
+
+    function getFullUserCount(){
         global $db;
-        $topic = $db->query("SELECT * FROM subtitles WHERE lesson_id = :lid ORDER BY slide_id",array("lid" => $lesson_id));
-        return $topic;
+        $userCount = $db->query("SELECT COUNT(*) FROM users");
+        return $userCount[0]["COUNT(*)"];
+    }
+
+    function getUCSCUserCount(){
+        global $db;
+        $userCount = $db->query("SELECT COUNT(*) FROM users where type = 2");
+        return $userCount[0]["COUNT(*)"];
+    }
+
+    function getBITUserCount(){
+        global $db;
+        $userCount = $db->query("SELECT COUNT(*) FROM users where type = 3");
+        return $userCount[0]["COUNT(*)"];
+    }
+    function getGeneralserCount(){
+        global $db;
+        $userCount = $db->query("SELECT COUNT(*) FROM users where type = 1");
+        return $userCount[0]["COUNT(*)"];
+    }
+
+    function getCurrentActiveUsers(){
+        global $db;
+        $userCount = $db->query("SELECT COUNT(*) FROM sessions");
+        return $userCount[0]["COUNT(*)"];
+
+    }
+
+    function getPresentage($variable1,$variable2){
+        return round((($variable1/$variable2) * 100),2);
+
 
     }
 
 
 
 
+    //  99 - admin
+    //  1 - general user
+    //  2 - ucsc user
+    //  3 - bit user
 
 
     //d(getLessonById("108"),"getLessonById");
@@ -89,3 +123,11 @@
     //d(getAllBySortOrder("108"),"getAllBySortOrder");
     //d(getTpoicsById("108"),"getTpoicsById");
     //d(insertresentLesson("108","18"),"insertresentLesson");
+
+      //d(getFullUserCount(),"getFullUserCount");
+      //d(getUCSCUserCount(),"getUCSCUserCount");
+      //d(getBITUserCount(),"getBITUserCount");
+      //d(getGeneralserCount(),"getGeneralserCount");
+      //d(getCurrentActiveUsers(),"getCurrentActiveUsers");
+
+        //d(getPresentage(getUCSCUserCount(),getFullUserCount()),"getPresentage");

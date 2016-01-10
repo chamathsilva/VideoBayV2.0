@@ -1,7 +1,10 @@
 
 <?php
 
-require("../../models/DB/Db.class.php");
+//require_once("../../models/DB/Db.class.php");
+require_once("../../controllers/DBfunctions/DbFunctions.php");
+
+
 $db = new Db();
 //login testing
 $dbh = $db->getPurePodo();
@@ -76,12 +79,6 @@ $uid= $auth->getSessionUID($userhash);
 
 
 
-                    <div class="clearfix">
-                        <div id="pinkcircle" data-text="work" data-percent="65" class="red "></div>
-                        <div id="bluecircle" data-text="rest" data-percent="87" class="purple"></div>
-                        <div id="bluecircle" data-text="play" data-percent="30" class=" blue"></div>
-                        <div id="clock" class="purple "></div>
-                    </div>
                     <!-- /custom text  -->
 
                     <!--
@@ -178,21 +175,6 @@ $uid= $auth->getSessionUID($userhash);
 </script>
 
 
-
-<script type="text/javascript">
-    $(function(){
-        $("[id$='circle']").percircle();
-
-        $("#clock").percircle({
-            perclock: true
-        });
-
-        $("#custom").percircle({
-            text:"custom",
-            percent: 27
-        });
-    });
-</script>
 
 
 </body>

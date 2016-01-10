@@ -40,7 +40,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         //////////////////////////////////////
         //Temporary use only
 
-        $_SESSION["user"] = $uid;
+        //$_SESSION["user"] = $uid;
 
         /////////////////////////////////////
 
