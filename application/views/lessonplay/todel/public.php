@@ -1,39 +1,22 @@
 <?php
-    session_start();
-    require_once("../../controllers/DBfunctions/DbFunctions.php");
+session_start();
+require_once("../../controllers/DBfunctions/DbFunctions.php");
+//////////////////////// make isset
+$id = $_GET['id'];
+$user_id =  13;
 
-    //login testing
-    $dbh = $db->getPurePodo();
-    include("../../models/PHPAuth/Config.php");
-    include("../../models/PHPAuth/Auth.php");
+$data = getLessonbyid($id); /// create return test
+$name = $data['name'];
+$lecture = $data['lecture'];
+$no_of_slid = $data['no_of_slides'];
+$temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
+$src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
 
-    $config = new PHPAuth\Config($dbh);
-    $auth   = new PHPAuth\Auth($dbh, $config);
+$slid_data = getAllBySortOrder($id);
+$topics = getTpoicsById($id);
 
-    if (!$auth->isLogged()) {
-        header('HTTP/1.0 403 Forbidden');
-        echo "Forbidden";
-        exit();
-    }
-    $userhash = $auth->getSessionHash();
-    $user_id= $auth->getSessionUID($userhash);
-    //Die($userhash."----".$uid);
-    //////////////////////// make isset
-    $id = $_GET['id'];
-
-    //$user_id =61;
-    $data = getLessonbyid($id); /// create return test
-    $name = $data['name'];
-    $lecture = $data['lecture'];
-    $no_of_slid = $data['no_of_slides'];
-    $temp = '../../../data/uploaded_lessons/'.$id.'/videos/1.mp4';
-    $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/';
-
-    $slid_data = getAllBySortOrder($id);
-    $topics = getTpoicsById($id);
-
-    //Update history //recent // staticstics
-    insertresentLesson($id,$user_id);
+//Update history //recent // staticstics
+insertresentLesson($id,$user_id);
 
 ?>
 <!DOCTYPE html>
@@ -59,9 +42,9 @@
 
 
 
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplay.css">
-    <link rel="stylesheet" href="../../../assets/CSS/custom/lessonplaynav.css">
-    <link rel="stylesheet" href="../../../assets/CSS/slider/sly.css">
+    <link rel="stylesheet" href="../../../../assets/CSS/custom/lessonplay.css">
+    <link rel="stylesheet" href="../../../../assets/CSS/custom/indexstyle.css">
+    <link rel="stylesheet" href="../../../../assets/CSS/slider/sly.css">
     <!--slider-->
 
 
@@ -71,26 +54,20 @@
 <div class="wrapper">
     <div class="col-sm-12">
         <?php
-        include '../includes/lessonplaynav.php'
+        include '../includes/lessonplaynavTemp.php'
         ?>
-     </div>
+    </div>
 
-    <div class="box">
+    <div class="box" >
         <div class="row row-offcanvas row-offcanvas-left">
 
-            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+            <div class="column col-sm-2 col-xs-2 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> My Lessons</a></li>
-                    <li><a ><i class="glyphicon glyphicon-list"></i> Watch Later</a></li>
-                    <li><a ><i class="glyphicon glyphicon-paperclip"></i> Categories</a></li>
-                </ul>
-
-                <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="sidemenu text4">Main Topics</li>
+                    <li class="sidemenu">Main Topics</li>
                     <?php
                     foreach($topics as $row){
                         $start_time = $row['start_time'];
@@ -108,7 +85,7 @@
 
                 <ul class="nav hidden-xs">
                     <div class="row">
-                        <li class="sidemenu text4" style="margin-bottom: 5px">Watch Next</li>
+                        <li style="margin-bottom: 15px; margin-top:10px; ">Watch Next</li>
                         <div id="watch_next"></div>
                     </div>
 
@@ -116,12 +93,15 @@
 
             </div>
             <!-- main right col -->
-            <div class="column col-sm-10" id="main">
+            <div class="column col-sm-10 col-xs-10" id="main">
 
                 <div class="full ">
                     <div class="col-sm-12 text">
                         <div id="results">Hello</div>
                     </div>
+
+
+                    <!--hide karala tibba eka ain kara -->
                     <div id = "lessonplay" class = "hideee" class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
@@ -137,27 +117,27 @@
                             </div>
 
                             <div class=" col-sm-12">
-                                <div class = "slidNavigator">
-                                    <div class="col-sm-12">
-                                        <div class="detail-panal">
-                                            <div class="col-sm-4 col-xs-2">
+
+                                <div class = "slidNavigator" style="margin-left: -10px;">
+                                    <div class="col-sm-10">
+                                        <div class="detail-panal" style="width: 122%;height: 53px;margin-bottom: 5px;">
+                                            <div class="col-sm-4">
                                                 <div class="lesson-topic">
                                                     <?php echo $name; ?>
                                                 </div>
                                             </div>
 
 
-
-                                            <div class="col-sm-2" style="padding-top: 10px;">
-                                                <button  onclick="addWatchlater();" class="btn">Watch later</button>
+                                            <div class="col-sm-2 text-right">
+                                                <button  onclick="addWatchlater();" class="btn">Watch later</button>'
 
                                             </div>
 
 
-                                            <div class="col-sm-4 col-xs-2">
+                                            <div class="col-sm-6">
                                                 <div class="lesson-topic">
                                                     <i class="fa fa-graduation-cap"></i>
-                                                        <?php echo $lecture; ?>
+                                                    <?php echo $lecture; ?>
                                                 </div>
                                             </div>
 
@@ -168,7 +148,9 @@
 
 
                                 <div class="col-sm-12">
+                                    <!--div class="detail-panal" style="border:0px solid black;width:122%;height:300px;overflow-y:hidden;overflow-x:scroll;"-->
                                     <div class="wrap">
+
                                         <div class="frame" id="centered">
                                             <ul class="slidee">
                                                 <?php
@@ -207,9 +189,7 @@
                                         </div>
 
                                         <div class="scrollbar">
-                                            <div class="handle">
-
-                                            </div>
+                                            <div class="handle"></div>
                                         </div>
 
 
@@ -226,7 +206,11 @@
 
 
                     </div> <!--Full end -->
+
+
                 </div>  <!--container end-->
+
+
             </div>
         </div>
     </div>
@@ -248,14 +232,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
-<script src="../../../public/js/userhome.js"></script>
+
 
 
 <?php include '../../controllers/synchronize.php';?>
 <!--Slider -->
 
-<script src="../../../assets/CSS/slider/plugin.js"></script>
-<script src="../../../assets/CSS/slider/sly.js"></script>
+<script src="../../../../assets/CSS/slider/plugin.js"></script>
+<script src="../../../../assets/CSS/slider/sly.js"></script>
 <!--
 <script src="slider/slider.js"></script>
 -->
@@ -310,7 +294,7 @@
         var panal = $("#lessonplay");
 
 
-        $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        $("#results").prepend('<div class="loading-indication"><img src="../../../../assets/images/ajax-loader.gif" /> Loading...</div>');
 
 
         panal.slideDown(function(){panal.removeClass("hide");});
@@ -318,11 +302,11 @@
         $("#results").hide();
 
         //load  lessons to the watch next.
-        $("#watch_next").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        $("#watch_next").prepend('<div class="loading-indication"><img src="../../../../assets/images/ajax-loader.gif" /> Loading...</div>');
         $("#watch_next").load("../../controllers/lessonmanagement/watchNext.php",{"id":<?php echo $id; ?>});
 
         //load  watch later to the watch_later.
-        $("#watch_later").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        $("#watch_later").prepend('<div class="loading-indication"><img src="../../../../assets/images/ajax-loader.gif" /> Loading...</div>');
         $("#watch_later").load("../../models/fetch_watch_later.php");
 
 
@@ -337,7 +321,7 @@
         // this is for mouse click event
         $("#serchbut").click(function(){
             $( "#lessonplay" ).empty();
-            $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+            $("#results").prepend('<div class="loading-indication"><img src="../../../../assets/images/ajax-loader.gif" /> Loading...</div>');
             var search_keyword = document.getElementById("srch-term").value;
             alert(search_keyword);
             $("#results").load("../../controllers/lessonmanagement/searchLessons.php",{'key':search_keyword});
@@ -355,7 +339,7 @@
         alert("Hello! I am an alert box!!".concat(getCurTime()));
     }
     function addWatchlater() {
-        window.location.href = "../../controllers/lessonmanagement/addwatchLater.php?id=".concat(<?php echo $id;?>,"&time=",getCurTime(),"&uid=",<?php echo $user_id; ?> );
+        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
     }
 
 

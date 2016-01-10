@@ -147,19 +147,22 @@
                                     </div>
                                     <div id="email" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <label class="control-label col-sm-6" style="font-weight:normal" for="email1">Current email </label>
-                                            <label class="control-label col-sm-6" style="font-weight:normal" for="email1"><?php echo $email;?> </label>
+
 
                                             <form id ="mailChangeForm" class="horizontal">
-                                                <div class="form-group" style="padding-bottom: 30px">
+                                                <div class="form-group" style="padding-bottom: 30px;">
+                                                    <label class="control-label col-sm-6"  for="email1">Current email </label>
+                                                    <label class="control-label col-sm-6"  for="email1"><div id="currentEmail"><?php echo $email;?></div> </label>
+                                                </div>
+                                                <div class="form-group" style="padding-bottom: 30px;">
                                                     <label for="inputEmail3" class="col-sm-3 form-control-label">New email</label>
                                                     <div class="col-sm-9">
-                                                        <input type="email" class="form-control" id="newemail" name="newemail" placeholder="Email">
+                                                        <input type="email" class="form-control" id="newemail" name="newemail" placeholder="New Email">
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group" style="padding-bottom: 30px">
-                                                    <label for="inputEmail3" class="col-sm-3 form-control-label">Current Password</label>
+                                                <div class="form-group" style="padding-bottom: 30px;">
+                                                    <label for="inputEmail3" class="col-sm-3 form-control-label">Current password</label>
                                                     <div class="col-sm-9">
                                                         <input type="password" class="form-control" id="currentPasswordEmail"  name="currentPasswordEmail" placeholder="password">
                                                     </div>
@@ -184,20 +187,20 @@
                                         <div class="panel-body">
 
                                             <form id = "changePasswordForm" class="horizontal">
-                                                <div class="form-group" style="padding-bottom: 30px">
+                                                <div class="form-group" style="padding-bottom: 30px;">
                                                     <label for="inputEmail3" class="col-sm-3 form-control-label">Current Password</label>
                                                     <div class="col-sm-9">
                                                         <input type="password" class="form-control" id="currentPassword"  name="currentPassword" placeholder="password">
                                                     </div>
                                                 </div>
-                                                <div class="form-group " style="padding-bottom: 30px">
+                                                <div class="form-group " style="padding-bottom: 30px;">
                                                     <label for="inputEmail3" class="col-sm-3 form-control-label">New Password </label>
                                                     <div class="col-sm-9">
                                                         <input type="password" class="form-control" id="newPassword1" name="newPassword" placeholder="password">
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group " style="padding-bottom: 30px">
+                                                <div class="form-group " style="padding-bottom: 30px;">
                                                     <label for="inputEmail3" class="col-sm-3 form-control-label">Confirm Password</label>
                                                     <div class="col-sm-9">
                                                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="password">
@@ -221,9 +224,10 @@
                         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
                         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
                         <script src="../../../public/js/ucscvideobay.js"></script>
-                        <script src="../../../assets/JS/validation.js"></script>
+                        <script src="../../../assets/js/validation.js"></script>
                         <script src="../../../public/js/bootstrap-notify.min.js"></script>
 
+                        <script src="../../../public/js/userhome.js"></script>
 
 
 
@@ -335,6 +339,7 @@
                                                     if (response.type == "text") {
                                                         $("#setteingFeedback").hide().html(response.text).slideDown("slow");
                                                         $("#EmailLabele").html(email).slideDown("slow");
+                                                        $("#currentEmail").html(email).slideDown("slow");
                                                         document.getElementById("mailChangeForm").reset();
 
                                                     } else {
