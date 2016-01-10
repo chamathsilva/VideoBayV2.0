@@ -75,10 +75,10 @@
         ?>
      </div>
 
-    <div class="box" >
+    <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
 
-            <div class="column col-sm-2 col-xs-2 sidebar-offcanvas" id="sidebar">
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
                 </ul>
@@ -90,7 +90,7 @@
                 </ul>
 
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="sidemenu">Main Topics</li>
+                    <li class="sidemenu text4">Main Topics</li>
                     <?php
                     foreach($topics as $row){
                         $start_time = $row['start_time'];
@@ -108,7 +108,7 @@
 
                 <ul class="nav hidden-xs">
                     <div class="row">
-                        <li style="margin-bottom: 15px; margin-top:10px; ">Watch Next</li>
+                        <li class="sidemenu text4" style="margin-bottom: 5px">Watch Next</li>
                         <div id="watch_next"></div>
                     </div>
 
@@ -116,15 +116,12 @@
 
             </div>
             <!-- main right col -->
-            <div class="column col-sm-10 col-xs-10" id="main">
+            <div class="column col-sm-10" id="main">
 
                 <div class="full ">
                     <div class="col-sm-12 text">
                         <div id="results">Hello</div>
                     </div>
-
-
-                    <!--hide karala tibba eka ain kara -->
                     <div id = "lessonplay" class = "hideee" class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
@@ -140,24 +137,28 @@
                             </div>
 
                             <div class=" col-sm-12">
-
-                                <div class = "slidNavigator" style="margin-left: -10px;">
-                                    <div class="col-sm-10">
-                                        <div class="detail-panal" style="width: 122%;height: 53px;margin-bottom: 5px;">
-                                            <div class="col-sm-4">
+                                <div class = "slidNavigator">
+                                    <div class="col-sm-12">
+                                        <div class="detail-panal">
+                                            <div class="col-sm-4 col-xs-2">
                                                 <div class="lesson-topic">
                                                     <?php echo $name; ?>
                                                 </div>
                                             </div>
 
 
+<<<<<<< HEAD
+                                            <div class="col-sm-2" style="padding-top: 10px;">
+                                                <button  onclick="addWatchlater();" class="btn">Watch later</button>
+=======
                                             <div class="col-sm-2 text-right">
                                                 <button  onclick="addWatchlater()" class="btn">TTWatch later</button>'
 
+>>>>>>> 7470c4ad46519c6e7a4e0646adb3e1128953b0b7
                                             </div>
 
 
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4 col-xs-2">
                                                 <div class="lesson-topic">
                                                     <i class="fa fa-graduation-cap"></i>
                                                         <?php echo $lecture; ?>
@@ -171,9 +172,7 @@
 
 
                                 <div class="col-sm-12">
-                                    <!--div class="detail-panal" style="border:0px solid black;width:122%;height:300px;overflow-y:hidden;overflow-x:scroll;"-->
                                     <div class="wrap">
-
                                         <div class="frame" id="centered">
                                             <ul class="slidee">
                                                 <?php
@@ -231,11 +230,7 @@
 
 
                     </div> <!--Full end -->
-
-
                 </div>  <!--container end-->
-
-
             </div>
         </div>
     </div>
