@@ -35,7 +35,7 @@ foreach ($lessons1 as $row) {
     $src_path = 'data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
     echo '<div class="col-lg-3 col-md-4 col-xs-6 ">';
-    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonsplay/lessonPlay2.php?id='."$id".'" >';
+    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';
     //echo '<h6>basic configurations</h6>';
     echo '<h4>'."$name".'</h4>';
@@ -50,7 +50,7 @@ foreach ($lessons2 as $row) {
     $src_path = 'data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
     echo '<div class="col-lg-3 col-md-4 col-xs-6 ">';
-    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonsplay/lessonPlay2.php?id='."$id".'" >';
+    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
     //echo '<img class="img-responsive" src='."$src_path".' alt="">';
     echo '<h6>basic configurations</h6>';
     echo '<h4>'."$name".'</h4>';

@@ -34,6 +34,7 @@ foreach ($lessons as $row) {
     echo'</a>';
     echo '<li>';
     */
+
     echo '<div class="col-lg-3 col-md-4 col-xs-6 text2">';
     echo '<a class="thumbnail" href="../lessonsplay/lessonPlayLater.php?id='."$id".'&time='.$time.'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';

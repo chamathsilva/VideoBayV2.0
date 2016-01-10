@@ -6,6 +6,7 @@
  */
     //FUNCTION HADANNA DB EKEN MEWA GANNA PULUWAN VENNA
 
+    $uid =13;
     $item_per_page = 4; //need to put this configuration file
     require("../../models/DB/Db.class.php");
     $db = new Db();
@@ -303,7 +304,7 @@
                 var m_data = new FormData();
                 m_data.append( 'topic',  document.getElementById("topic" ).value);
                 m_data.append( 'comment', document.getElementById("comment").value);
-
+                m_data.append( 'uid', <?php echo $uid; ?>);
                 document.getElementById("request_form").reset();
 
                 //Ajax post data to server

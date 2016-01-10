@@ -188,11 +188,11 @@
                 extension:"Invalis extension Please select mp4 file "
             },
             "files[]":{
-                required: "Please select png files",
+                required: "Please select png files"
                 // extension:"Invalis extension Please select mp4 file "
             },
             "FileInput3":{
-                required: "Please select txt file",
+                required: "Please select txt file"
                 // extension:"Invalis extension Please select mp4 file "
             }
 
@@ -244,7 +244,7 @@
     {
         //Progress bar
         $('#progressbox').show();
-        $('#progressbar').width(percentComplete + '%') //update progressbar percent complete
+        $('#progressbar').width(percentComplete + '%'); //update progressbar percent complete
         $('#statustxt').html(percentComplete + '%'); //update status text
         if(percentComplete>50)
         {
@@ -253,7 +253,7 @@
     }
 
     //function to format bites bit.ly/19yoIPO
-  / function bytesToSize(bytes) {
+    function bytesToSize(bytes) {
         var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
         if (bytes == 0) return '0 Bytes';
         var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
