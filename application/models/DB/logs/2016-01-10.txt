@@ -1,3 +1,9 @@
+Time : 23:20:07
+SQLSTATE[HY000] [1049] Unknown database 'vb4'
+
+Time : 23:18:14
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
 Time : 06:17:57
 SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'user_name' cannot be null
 Raw SQL : INSERT INTO feedback (topic,comment,user_id,time_stamp) VALUES(:topic,:comment,:uid,CURRENT_TIMESTAMP)
