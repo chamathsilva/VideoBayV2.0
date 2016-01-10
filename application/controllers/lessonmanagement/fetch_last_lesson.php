@@ -16,7 +16,7 @@ foreach ($lessons as $row) {
     $src_path = '../../../data/uploaded_lessons/'.$id.'/slides/1.jpg';
 
     echo '<div class="col-md-5 col-xs-8 col-md-offset-3 text2">';
-    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlayTemp.php?id='."$id".'" >';
+    echo '<a onclick="myFunction('.$id.')" class="thumbnail" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';
     echo '<h4>'."$name".'</h4>';
     echo'</a>';

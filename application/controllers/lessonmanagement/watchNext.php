@@ -20,7 +20,7 @@ foreach ($lessons as $row) {
 
     echo '<li class="media">';
     echo '<div class="col-lg-7 col-md-7 col-xs-7">';
-    echo '<a class="pull-left" href="../lessonplay/lessonPlay.php?id='."$id".'" >';
+    echo '<a class="pull-left" href="lessonPlay.php?id='."$id".'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';
     echo '</div>';
 
@@ -31,4 +31,6 @@ foreach ($lessons as $row) {
     echo '<li>';
 }
 ?>
+
+
 
