@@ -20,10 +20,9 @@ if($_POST)
 
 
     //Sanitize input data using PHP filter_var().
-    $topic       = filter_var($_POST["topic"], FILTER_SANITIZE_STRING);
-    $comment   = filter_var($_POST["comment"], FILTER_SANITIZE_STRING);
-    $user_id = $_SESSION["user"];
-
+    $topic      = filter_var($_POST["topic"], FILTER_SANITIZE_STRING);
+    $comment    = filter_var($_POST["comment"], FILTER_SANITIZE_STRING);
+    $user_id    = filter_var($_POST["uid"], FILTER_SANITIZE_STRING);
 
     //$result=  $db->query("UPDATE lesson SET name = :namee,lecture = :lec,category = :cat,type = :typ WHERE lesson_id = :lid",array("namee"=>$Name,"lec"=>$Lecture,"cat"=>$Category,"typ"=>$Type,"lid"=> $id));
 
