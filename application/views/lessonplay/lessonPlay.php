@@ -1,10 +1,27 @@
 <?php
     session_start();
     require_once("../../controllers/DBfunctions/DbFunctions.php");
+
+    //login testing
+    $dbh = $db->getPurePodo();
+    include("../../models/PHPAuth/Config.php");
+    include("../../models/PHPAuth/Auth.php");
+
+    $config = new PHPAuth\Config($dbh);
+    $auth   = new PHPAuth\Auth($dbh, $config);
+
+    if (!$auth->isLogged()) {
+        header('HTTP/1.0 403 Forbidden');
+        echo "Forbidden";
+        exit();
+    }
+    $userhash = $auth->getSessionHash();
+    $user_id= $auth->getSessionUID($userhash);
+    //Die($userhash."----".$uid);
     //////////////////////// make isset
     $id = $_GET['id'];
 
-    $user_id =61;
+    //$user_id =61;
     $data = getLessonbyid($id); /// create return test
     $name = $data['name'];
     $lecture = $data['lecture'];

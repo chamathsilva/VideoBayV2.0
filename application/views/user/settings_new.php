@@ -10,9 +10,15 @@
 
     //$uid = $auth->getSessionUID($auth->getSessionHash());
 
-    $uid =23;
-    $result = $auth->getUser($uid);
 
+    if (!$auth->isLogged()) {
+        header('HTTP/1.0 403 Forbidden');
+        echo "Forbidden";
+        exit();
+    }
+    $userhash = $auth->getSessionHash();
+    $uid= $auth->getSessionUID($userhash);
+    $result = $auth->getUser($uid);
     $email = $result['email'];
     $firstname = $result['firstName'];
     $lastname = $result['Lastname'];

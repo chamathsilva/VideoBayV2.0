@@ -1345,8 +1345,8 @@ class Auth
 	*/
 
 	public function isLogged() {
-		echo'<pre>';
-		var_dump($_COOKIE);
+		//echo'<pre>';
+		//var_dump($_COOKIE);
 		return (isset($_COOKIE[$this->config->cookie_name]) && $this->checkSession($_COOKIE[$this->config->cookie_name]));
 
 	}

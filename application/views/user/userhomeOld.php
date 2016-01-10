@@ -6,7 +6,7 @@
  */
     //FUNCTION HADANNA DB EKEN MEWA GANNA PULUWAN VENNA
 
-    $uid =61;
+    //$uid =61;
     $item_per_page = 4; //need to put this configuration file
     require("../../models/DB/Db.class.php");
     $db = new Db();
@@ -18,6 +18,22 @@
     //break total records into pages
     $total_pages = ceil($get_total_rows/$item_per_page);
 
+    //login testing
+    $dbh = $db->getPurePodo();
+    include("../../models/PHPAuth/Config.php");
+    include("../../models/PHPAuth/Auth.php");
+
+    $config = new PHPAuth\Config($dbh);
+    $auth   = new PHPAuth\Auth($dbh, $config);
+
+    if (!$auth->isLogged()) {
+        header('HTTP/1.0 403 Forbidden');
+        echo "Forbidden";
+        exit();
+    }
+    $userhash = $auth->getSessionHash();
+    $uid= $auth->getSessionUID($userhash);
+    //Die($userhash."----".$uid);
 
 ?>
 
@@ -116,9 +132,12 @@
 <script type="text/javascript">
 
 
+
+
+
+
     var fullbody = $("#fullBody");
     $(document).ready(function() {
-
 
         // This part replace with load more
         //load all the results to home page when load the page.
