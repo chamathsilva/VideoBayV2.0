@@ -120,7 +120,7 @@
 
                             </div> <!--end of result div -->
 
-                            <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;">
+                            <div class="col-sm-12 text " id="loadmore" style="margin-bottom: 20px;color:#000000">
                             </div>
                     </div>
                 </div>
