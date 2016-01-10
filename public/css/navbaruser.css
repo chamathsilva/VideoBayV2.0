@@ -237,5 +237,8 @@ h1,h2,h3 {
 
 }
 
-
-
+.text4{
+    color: #696d71;
+    padding: 0px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+}
