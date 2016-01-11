@@ -83,14 +83,6 @@ insertresentLesson($id,$user_id);
 
                 </ul>
 
-                <ul class="nav hidden-xs">
-                    <div class="row">
-                        <li class="sidemenu text4" style="margin-bottom: 15px; margin-top:10px; ">Watch Next</li>
-                        <div id="watch_next"></div>
-                    </div>
-
-                </ul>
-
             </div>
             <!-- main right col -->
             <div class="column col-sm-10" id="main">
@@ -291,32 +283,8 @@ insertresentLesson($id,$user_id);
         //jump to the video to specifc time.used for watch later function.
         $("#results").hide();
 
-        //load  lessons to the watch next.
-        $("#watch_next").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-        $("#watch_next").load("../../controllers/lessonmanagement/watchNext.php",{"id":<?php echo $id; ?>});
-
-        //load  watch later to the watch_later.
-        $("#watch_later").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-        $("#watch_later").load("../../models/fetch_watch_later.php");
 
 
-
-        // this is for enter press , this call on click event
-        $('#search-form').submit(function(e) {
-            var $this = $(this);
-            e.preventDefault(); // Prevents the form from submitting regularly
-            $("#serchbut").click();
-
-        });
-        // this is for mouse click event
-        $("#serchbut").click(function(){
-            $( "#lessonplay" ).empty();
-            $("#results").prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
-            var search_keyword = document.getElementById("srch-term").value;
-            alert(search_keyword);
-            $("#results").load("../../controllers/lessonmanagement/searchLessons.php",{'key':search_keyword});
-
-        });
 
 
 
@@ -326,10 +294,7 @@ insertresentLesson($id,$user_id);
 <script>
     function myFunction() {
         setCurTime(60);
-        alert("Hello! I am an alert box!!".concat(getCurTime()));
-    }
-    function addWatchlater() {
-        window.location.href = "../../models/addwatchLater.php?id=".concat(,"&time=",getCurTime());
+        //alert("Hello! I am an alert box!!".concat(getCurTime()));
     }
 
 

@@ -8,14 +8,6 @@
     $config = new PHPAuth\Config($dbh);
     $auth   = new PHPAuth\Auth($dbh, $config);
 
-    //$uid = $auth->getSessionUID($auth->getSessionHash());
-
-
-    if (!$auth->isLogged()) {
-        header('HTTP/1.0 403 Forbidden');
-        echo "Forbidden";
-        exit();
-    }
     $userhash = $auth->getSessionHash();
     $uid= $auth->getSessionUID($userhash);
     $result = $auth->getUser($uid);
@@ -228,8 +220,6 @@
                         <script src="../../../public/js/bootstrap-notify.min.js"></script>
 
                         <script src="../../../public/js/userhome.js"></script>
-
-
 
 
 

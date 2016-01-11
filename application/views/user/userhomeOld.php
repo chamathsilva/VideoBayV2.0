@@ -211,6 +211,13 @@
 
     }
 
+    function loadSettings(){
+        fullbody.empty();
+        fullbody.prepend('<div class="loading-indication"><img src="../../../assets/images/ajax-loader.gif" /> Loading...</div>');
+        fullbody.load("settingAjax.php",{'uid':<?php echo $uid;?>});
+
+    }
+
 
     function deleteWatchLater(id){
         var r = confirm("Are you sure !" + id);

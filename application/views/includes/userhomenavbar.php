@@ -35,7 +35,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="settings_new.php">Settings</a></li>
+                    <!--<li><a href="settings_new.php">Settings</a></li>-->
+                    <li><a onclick="loadSettings()">Settings</a>
                     <li><a href="logout.php">Sign Out</a></li>
 
                 </ul>

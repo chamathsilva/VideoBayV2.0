@@ -158,6 +158,7 @@
                     required: true
                 }
             }
+
         });
 
         function testSubmit(){
