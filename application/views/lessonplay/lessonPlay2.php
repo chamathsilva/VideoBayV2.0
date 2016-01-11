@@ -20,6 +20,8 @@
     //Die($userhash."----".$uid);
     //////////////////////// make isset
     $id = $_GET['id'];
+    $initialstart = $_GET['time'];
+
 
     //$user_id =61;
     $data = getLessonbyid($id); /// create return test
@@ -147,14 +149,15 @@
                                             </div>
 
 
+                                            <div class="col-sm-2" style="padding-top: 10px;">
+                                                <button  onclick="setCurTime(<?php echo $initialstart; ?>);" class="btn">last view</button>
+
+                                            </div>
 
                                             <div class="col-sm-2" style="padding-top: 10px;">
                                                 <button  onclick="addWatchlater();" class="btn">Watch later</button>
                                             </div>
-                                            <div class="col-sm-2" style="padding-top: 10px;">
-                                                <button  onclick="addWatchlater();" class="btn">last view</button>
 
-                                            </div>
 
 
                                             <div class="col-sm-4 col-xs-2">

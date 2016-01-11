@@ -36,7 +36,7 @@ foreach ($lessons as $row) {
     */
 
     echo '<div class="col-lg-3 col-md-4 col-xs-6 text2">';
-    echo '<a class="thumbnail" href="../lessonsplay/lessonPlayLater.php?id='."$id".'&time='.$time.'" >';
+    echo '<a class="thumbnail" href="../lessonplay/lessonPlay2.php?id='."$id".'&time='.$time.'" >';
     echo '<img class="img-responsive" src='."$src_path".' alt="">';
     echo '<h4>'."$name".'</h4></a><span style="margin-right:10px;float:right" class="btn btn-danger btn-sm" onclick = "deleteWatchLater('.$id.')" > <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </span>'.'</h4>';
     echo'</a>';
