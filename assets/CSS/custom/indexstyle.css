@@ -106,11 +106,18 @@ padding: 25px 25px 20px 25px;
 }
 
 
-.feederror{
-    color: #ff3922;
-    text-align: center;
-    margin-bottom: 10px
+.error{
+    color: #a94442;
+
 }
+
+.feederror{
+    color: #a94442;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .main{
     background-color: #dcdcdc;
 }

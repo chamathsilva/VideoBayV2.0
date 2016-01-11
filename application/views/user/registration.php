@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="form-bottom">
-                    <div  id ="feedback" class="error"></div>
+                    <div  id ="feedback" class="feederror" style="align-content: center"></div>
 
                     <form id = "register_form" role="form" action="../../controllers/usermanagement/testregistration.php" method="POST" class="registration-form">
 

@@ -67,7 +67,7 @@ $name_array[] = $lessonname['name'];
                 type: 'line'
             },
             title: {
-                text: 'Mon-Average Views'
+                text: 'Monthly Views'
             },
             credits: false,
             xAxis: {
@@ -128,7 +128,7 @@ $name_array[] = $lessonname['name'];
                 type: 'column'
             },
             title: {
-                text: 'Totalviews'
+                text: 'Total views'
             },
             credits: false,
             xAxis: {

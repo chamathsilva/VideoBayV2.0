@@ -39,8 +39,8 @@
                     </div>
                 </div>
 
-                <div class="form-group col-sm-6">
-                    <label class="control-label col-sm-2" for="subject" >Subject <span class="required"></span></label>
+                <div class="form-group col-sm-6 ">
+                    <label class="control-label col-sm-2 col-md-offset-2" for="subject" >Subject <span class="required"></span></label>
                     <div class="col-sm-offset-2 col-sm-4">
                         <div class="checkbox">
                             <label><input type="checkbox" value="Algorithm" name="subject[]">Algorithm </label>

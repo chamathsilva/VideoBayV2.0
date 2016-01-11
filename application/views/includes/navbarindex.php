@@ -19,7 +19,7 @@
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
 
                         <div class="dropdown-menu" style="padding: 15px; padding-bottom:  0px;">
-                            <div  id ="feedback" class="error"></div>
+                            <div  id ="feedback" class="feederror"></div>
 
                             <form  role="form" id="login_form" action="application/controllers/usermanagement/testlogin.php" method="post"  accept-charset="UTF-8">
 

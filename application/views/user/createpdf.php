@@ -13,7 +13,7 @@ class PDF extends FPDF
         // Décalage à droite
         $this->Cell(80);
         // Titre
-        $this->Cell(30,10,'Titre',1,0,'C');
+        $this->Cell(40,10,'USER REPORT',1,0,'C');
         // Saut de ligne
         $this->Ln(20);
     }
@@ -36,6 +36,6 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 for($i=1;$i<=40;$i++)
-    $pdf->Cell(0,10,'Impression de la ligne numéro '.$i,0,1);
+    $pdf->Cell(0,10,'USER NAME : '.$i,0,1);
 $pdf->Output();
 ?>

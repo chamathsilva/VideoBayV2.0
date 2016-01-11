@@ -148,10 +148,10 @@
 
 
 
-                                            <div class="col-sm-1" style="padding-top: 10px;">
+                                            <div class="col-sm-2" style="padding-top: 10px;">
                                                 <button  onclick="addWatchlater();" class="btn">Watch later</button>
                                             </div>
-                                            <div class="col-sm-1" style="padding-top: 10px;">
+                                            <div class="col-sm-2" style="padding-top: 10px;">
                                                 <button  onclick="addWatchlater();" class="btn">last view</button>
 
                                             </div>

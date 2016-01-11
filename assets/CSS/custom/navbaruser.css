@@ -85,7 +85,7 @@ hr {
 }
 
 #sidebar {
-    padding:0px;
+
     padding-top:15px;
 }
 
@@ -118,9 +118,6 @@ hr {
 }
 #sidebar-footer {
     background-color:#444;
-    position:absolute;
-    bottom:5px;
-    padding:5px;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
 
 }
