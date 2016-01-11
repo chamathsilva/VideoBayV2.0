@@ -188,7 +188,7 @@
                 extension:"Invalis extension Please select mp4 file "
             },
             "files[]":{
-                required: "Please select png files"
+                required: "Please select jpeg/png files"
                 // extension:"Invalis extension Please select mp4 file "
             },
             "FileInput3":{
