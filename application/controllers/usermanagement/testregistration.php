@@ -30,7 +30,7 @@ $key = ($_POST['g-recaptcha-response']);
 
 $params = array("firstName" => "$firstname","Lastname" => "$lastname", "username" => "$username","type" => '1');
 
-$result= $auth->register($email,$password,$passwordconform ,$params);
+$result= $auth->register($email,$password,$passwordconform ,$params,$sendmail = true);
 
 
 if ($result['error']){

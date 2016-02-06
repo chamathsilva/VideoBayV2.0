@@ -3,13 +3,23 @@
 namespace PHPAuth;
 
 use ZxcvbnPhp\Zxcvbn;
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer;
+//require '../PHPMailer/PHPMailerAutoload.php';
 
+//$mail = new PHPMailer;
+//include ('PHPMailer/PHPMailer.php');
 
 spl_autoload_register(function ($class) {
 	$className = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+	echo $className;
+	echo '<br>';
 	include  $className .'.php';
 });
+
+
+
+
+
 /***
 * Auth class
 * Required PHP 5.4 and above.
@@ -144,7 +154,7 @@ class Auth
 	* @return array $return
 	*/
 
-	public function register($email, $password, $repeatpassword, $params = Array(), $captcha = NULL, $sendmail = NULL)
+	public function register($email, $password, $repeatpassword, $params = Array(), $captcha = NULL, $sendmail = true)
 	{
 		$return['error'] = true;
 
@@ -194,6 +204,9 @@ class Auth
 			$return['message'] = $this->lang["email_taken"];
 			return $return;
 		}
+
+		echo "#####################";
+		echo $sendmail;
 
 		$addUser = $this->addUser($email, $password, $params, $sendmail);
 
@@ -263,7 +276,7 @@ class Auth
 	* @return array $return
 	*/
 
-	public function requestReset($email, $sendmail = NULL)
+	public function requestReset($email, $sendmail = true)
 	{
 		$return['error'] = true;
         $block_status = $this->isBlocked();
@@ -520,6 +533,9 @@ class Auth
 
 	private function addUser($email, $password, $params = array(), &$sendmail)
 	{
+
+
+
 		$return['error'] = true;
 
 		$query = $this->dbh->prepare("INSERT INTO {$this->config->table_users} VALUES ()");
@@ -533,6 +549,7 @@ class Auth
 		$email = htmlentities(strtolower($email));
 
 		if($sendmail) {
+			echo "My test 9";
 			$addRequest = $this->addRequest($uid, $email, "activation", $sendmail);
 
 			if($addRequest['error'] == 1) {
@@ -716,11 +733,17 @@ class Auth
 		if($type != "activation" && $type != "reset") {
 			$return['message'] = $this->lang["system_error"] . " #08";
 			return $return;
-		}        
-	
+		}
+
+		echo "<var>";
+		var_dump($sendmail);
+		echo "</var>";
+
+
         // if not set manually, check config data
         if($sendmail === NULL)
 		{
+			echo 'my test 1';
 			$sendmail = true;			
 			if($type == "reset" && $this->config->emailmessage_suppress_reset === true ) {
 				$sendmail = false;
@@ -768,30 +791,71 @@ class Auth
 
 		$request_id = $this->dbh->lastInsertId();
 
+
+		##
+
+
+		##
+		//$sendmail = true;
 		if($sendmail === true)
         {
+
 			// Check configuration for SMTP parameters	
-        $mail = new PHPMailer;
-				if($this->config->smtp) {
-					$mail->isSMTP();
-					$mail->Host = $this->config->smtp_host;
-					$mail->SMTPAuth = $this->config->smtp_auth;
-					if(!is_null($this->config->smtp_auth)) {
-	            			$mail->Username = $this->config->smtp_username;
-	            			$mail->Password = $this->config->smtp_password;
-	            		}
-					$mail->Port = $this->config->smtp_port;
-	
-					if(!is_null($this->config->smtp_security)) {
-						$mail->SMTPSecure = $this->config->smtp_security;
-				}
-			}
-	
-			$mail->From = $this->config->site_email;
-			$mail->FromName = $this->config->site_name;
-			$mail->addAddress($email);
-			$mail->isHTML(true);
-	
+//        $mail = new PHPMailer;
+//				if($this->config->smtp) {
+//					$mail->isSMTP();
+//					$mail->Host = $this->config->smtp_host;
+//					$mail->SMTPAuth = $this->config->smtp_auth;
+//					if(!is_null($this->config->smtp_auth)) {
+//	            			$mail->Username = $this->config->smtp_username;
+//	            			$mail->Password = $this->config->smtp_password;
+//	            		}
+//					$mail->Port = $this->config->smtp_port;
+//
+//					if(!is_null($this->config->smtp_security)) {
+//						$mail->SMTPSecure = $this->config->smtp_security;
+//				}
+//			}
+//
+//			$mail->From = $this->config->site_email;
+//			$mail->FromName = $this->config->site_name;
+//			$mail->addAddress($email);
+//			$mail->isHTML(true);
+
+			$mail = new PHPMailer;
+
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+
+
+//PHP 5.6 certificate verification failure
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+					'verify_peer' => false,
+					'verify_peer_name' => false,
+					'allow_self_signed' => true
+				)
+			);
+
+			$mail->Host = 'tls://smtp.gmail.com:587';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'mbckchamathsilva@gmail.com';                 // SMTP username
+			$mail->Password = 'chamath1992104silva';                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			$mail->setFrom('mbckchamathsilva@gmail.com', 'Admin');
+			$mail->addAddress('mbckchamathsilva@gmail.com', 'Joe User');     // Add a recipient
+			$mail->addAddress('mbckchamathsilva@gmail.com');               // Name is optional
+			$mail->addReplyTo('mbckchamathsilva@gmail.com', 'Information');
+//$mail->addCC('cc@example.com');
+//$mail->addBCC('bcc@example.com');
+
+//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+			$mail->isHTML(true);                                  // Set email format to HTML
+
 			if($type == "activation") {
 	
 					$mail->Subject = sprintf($this->lang['email_activation_subject'], $this->config->site_name);
@@ -803,6 +867,8 @@ class Auth
 				$mail->Body = sprintf($this->lang['email_reset_body'], $this->config->site_url, $this->config->site_password_reset_page, $key);
 				$mail->AltBody = sprintf($this->lang['email_reset_altbody'], $this->config->site_url, $this->config->site_password_reset_page, $key);
 			}
+
+			echo "<br> How are you<br>";
 	
 			if(!$mail->send()) {
 				$this->deleteRequest($request_id);
@@ -810,6 +876,7 @@ class Auth
 				$return['message'] = $this->lang["system_error"] . " #10";
 				return $return;
 			}
+			echo "<br> im fine<br>";
         }
 
 		$return['error'] = false;

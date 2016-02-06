@@ -1,0 +1,55 @@
+Time : 01:03:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '98' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:03:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '98' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:03:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '98' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:03:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '98' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:02:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '92' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:02:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '92' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:02:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '92' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:02:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '92' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 01:02:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '92' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 00:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '83' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 00:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '83' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 00:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '83' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 00:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '83' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
+
+Time : 00:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '83' for key 'PRIMARY'
+Raw SQL : INSERT INTO recentlesson (user_id,lesson_id) VALUES (:uid, '0')
