@@ -171,11 +171,11 @@ if(isset($_POST["othersubjects"])) {
 }
 echo "Update database 2 <br>";
 
-////check for other search tags and get them if exits
-//if(isset($_POST["searchtags"])) {
-//    $searcht = $_POST["searchtags"];
-//    tagRows($lessonID,$searcht);
-//}
+//check for other search tags and get them if exits
+if(isset($_POST["searchtags"])) {
+    $searcht = $_POST["searchtags"];
+    tagRows($lessonID,$searcht);
+}
 
 echo "Update database 3 <br>";
 
