@@ -139,7 +139,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <img id="xx" class="img-responsive" src="<?php echo $src_path.'1.JPG';?>" alt="Wrong link" min-width="100%" height="auto" >
+                                <img id="xx" class="img-responsive" src="<?php echo $src_path.'1.jpg';?>" alt="Wrong link" min-width="100%" height="auto" >
                             </div>
 
                             <div class=" col-sm-12">

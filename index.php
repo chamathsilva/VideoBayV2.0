@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8 text  " >
-                        <h1><strong>UCSC VideoBay</strong></h1>
+                        <h1><strong>UCSC VideoBay</strong></h1>Beta 1.0
                         <div class="description">
                             <p>
                                 UCSC VideoBay is a web based system which creates a learning environment

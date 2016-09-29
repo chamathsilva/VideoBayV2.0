@@ -1,6 +1,6 @@
 <?php
 //server fix
-ini_set('memory_limit', '256M');
+ini_set('memory_limit', '1G');
 ini_set('max_execution_time', 600);
 
 
@@ -113,6 +113,9 @@ if (move_uploaded_file($_FILES['FileInput1']['tmp_name'], $UploadDirectory1 . $N
 } else {
     die('error uploading File! #1');
 }
+
+echo "make folder to slides\n";
+
 //make folder to slides
 if(!file_exists($UploadDirectory2)){
     mkdir($UploadDirectory2);
@@ -132,6 +135,9 @@ foreach($_FILES['files']['name'] as $i=>$name) {
 
 }
 
+
+echo "get the config file\n";
+
 //get the config file
 $File_Name = strtolower($_FILES['FileInput3']['name']);
 $NewFileName = $File_Name;
@@ -146,6 +152,8 @@ if (move_uploaded_file($_FILES['FileInput3']['tmp_name'], $UploadDirectory3 . $N
 } else {
     die('error uploading File!');
 }
+
+echo "Update database\n";
 
 //give parameters to the readCofigFile function
 readConfigFile($lessonID,$NewFileName);

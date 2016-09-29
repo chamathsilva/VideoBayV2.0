@@ -29,8 +29,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="../../../index.php" >Home</a></li>
-                <li><a href="../../../about.php" >About</a></li>
-                <li><a href="../../../about.php">Help</a></li>
+<!--                <li><a href="../../../about.php" >About</a></li>-->
+<!--                <li><a href="../../../about.php">Help</a></li>-->
                 <li><a href="../user/registration.php">Sign Up</a></li>
 
 
