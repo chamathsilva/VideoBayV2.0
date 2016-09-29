@@ -1,9 +1,9 @@
 <?php
 
 function readConfigFile($id,$name){
-
-    require_once("../../models/DB/Db.class.php");
-    $db = new Db();
+    global $db;
+//    require_once("../../models/DB/Db.class.php");
+//    $db = new Db();
     $lineCount=0;
     $newLine=0;
     //open uploaded file from the correct destination
@@ -79,7 +79,7 @@ function readConfigFile($id,$name){
                     $newLine++;
                 }
                 else {
-                    die(" config data added not successed ");
+                    die(" config data added not succeed ");
                 }
             }
         }
@@ -89,6 +89,7 @@ function readConfigFile($id,$name){
     }
 //close the config file
     fclose($myfile);
+    unset($myfile);
 
 
 }
