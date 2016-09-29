@@ -6,6 +6,7 @@ set_time_limit(6000);
 
 
 
+var_dump (debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
 
 
 require_once("configReader.php");
