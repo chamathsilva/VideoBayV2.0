@@ -8,17 +8,18 @@ function tagRows($lessonID,$row){
 
     //if the field is not empty read it
     if(trim($row) != ''){
-        $line = explode(',', $row);
+        $lines = explode(',', $row);
         //insert all subjects separated with comma into the searchtags table with correcponding lesson id
-        foreach($line as $line){
-            $tag = $db->query("INSERT INTO searchTags(lesson_id, tag) VALUES (:ld,:tg)",array("ld"=>$lessonID,"tg"=>$line));
+        foreach($lines as $line){
+            $tag = $db->query("INSERT INTO searchtags(lesson_id, tag) VALUES (:ld,:tg)",array("ld"=>$lessonID,"tg"=>$line));
 
             if(!($tag)){
                 die("Tags Not Added Successfully");
             }
-
         }
+        unset($lines);
     }
+
 }
 
 ?>
