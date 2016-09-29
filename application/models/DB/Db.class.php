@@ -7,6 +7,11 @@
  * @version      0.2ab
  *
  */
+
+//try to fix server
+ini_set('memory_limit', '2G');
+ini_set('max_execution_time', 6000);
+
 require("Log.class.php");
 class DB
 {

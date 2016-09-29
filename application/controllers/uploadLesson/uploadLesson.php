@@ -2,24 +2,11 @@
 //server fix
 ini_set('memory_limit', '2G');
 ini_set('max_execution_time', 6000);
+set_time_limit(6000);
 
 
 
-$memory_limit = ini_get('memory_limit');
-if (preg_match('/^(\d+)(.)$/', $memory_limit, $matches)) {
-    if ($matches[2] == 'M') {
-        $memory_limit = $matches[1] * 1024 * 1024; // nnnM -> nnn MB
-    } else if ($matches[2] == 'K') {
-        $memory_limit = $matches[1] * 1024; // nnnK -> nnn KB
-    }
-}
 
-$ok = ($memory_limit >= 640 * 1024 * 1024); // at least 64M?
-
-echo '<phpmem>';
-echo '<val>' . $memory_limit . '</val>';
-echo '<ok>' . ($ok ? 1 : 0) . '</ok>';
-echo '</phpmem>';
 
 require_once("configReader.php");
 require_once("subjectReader.php");
@@ -169,21 +156,28 @@ if (move_uploaded_file($_FILES['FileInput3']['tmp_name'], $UploadDirectory3 . $N
     die('error uploading File!');
 }
 
-echo "Update database\n";
+echo "Update database<br>";
 
 //give parameters to the readCofigFile function
 readConfigFile($lessonID,$NewFileName);
+
+echo "Update database 1 <br>";
 
 //check for other subjects field and get them if exits
 if(isset($_POST["othersubjects"])) {
     $others = $_POST["othersubjects"];
     subjectRows($lessonID,$others);
 }
+echo "Update database 2 <br>";
+
 //check for other search tags and get them if exits
 if(isset($_POST["searchtags"])) {
     $searcht = $_POST["searchtags"];
     tagRows($lessonID,$searcht);
 }
+
+echo "Update database 3 <br>";
+
 //get subjects check boxes
 $sub=$_POST["subject"];
 //get user check boxes
@@ -197,13 +191,18 @@ for($k=0;$k<4;$k++){
         $lsnsub = $db->query("INSERT INTO subjects(lesson_id, subject) VALUES (:ld,:su)",array("ld"=>$lessonID,"su"=>$sub[$k]));
     }
 }
+
+echo "Update database 4 <br>";
+
 //read checked check boxes of users and insert them into lessonusers table with corresponding lesson id
 for($r=0;$r<4;$r++){
     if(isset($use[$r])){
         $lsus = $db->query("INSERT INTO lessonusers(lesson_id, lsnuser) VALUES (:lud,:lusr)",array("lud"=>$lessonID,"lusr"=>$use[$r]));
     }
 }
-echo "Uploaded Successfuly";
+
+var_dump (debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
+echo "Uploaded Successful";
 
 
 ?>
