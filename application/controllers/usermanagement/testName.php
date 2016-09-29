@@ -28,8 +28,7 @@ if($_POST){
             'type'=>'text',
             'text' => '<div class="alert alert-success">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Success!</strong> Indicates a successful or positive action.
-                            </div>'
+                            <strong>Success!'
         ));
     }else{
         $output = json_encode(array( //create JSON data
@@ -45,5 +44,3 @@ if($_POST){
     die($output);
 
 }
-
-

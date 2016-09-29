@@ -22,12 +22,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../../../index.php" >Home</a></li>
-                    <li><a href="../../../about.php" >About</a></li>
-                    <li><a href="../../../about.php">Help</a></li>
+                    <!-- <li><a href="../../../about.php" >About</a></li>
+                    <li><a href="../../../about.php">Help</a></li> -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign in</a>
                         <div class="dropdown-menu ddmenu" style="padding: 15px; padding-bottom:  0px;">
-                            <div  id ="feedback2" class="error"></div>
+                            <div  id ="feedbacklogin" class="error"></div>
 
                             <form  role="form" id="login_form" action="../../controllers/usermanagement/testlogin.php" method="post"  accept-charset="UTF-8">
 
@@ -49,11 +49,3 @@
 
         </div>
     </div>
-
-
-
-
-
-
-
-

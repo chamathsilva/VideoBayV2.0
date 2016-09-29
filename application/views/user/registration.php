@@ -81,7 +81,7 @@
 
 
                         <div class="form-group " >
-                            <div class="g-recaptcha" data-sitekey="6LcvnRQTAAAAAHkGCwQ_9vNBTHYYepbV9HPcimuq"></div>
+                            <div class="g-recaptcha" data-sitekey="6LeP9wcUAAAAANtY-TzSM7nTbQLq6RzACnyTPRII"></div>
                         </div>
 
                         <button type="reset"  class="btn btn-success">Rest</button>
@@ -113,6 +113,65 @@
 
 <!--UCSC Vidobay-->
 <script src="../../../assets/JS/validation.js"></script>
+
+
+    <!--login script-->
+    <script>
+
+
+
+        $("#login_form").validate({
+            rules:{
+                username:{
+                    required: true
+
+                },
+                password: {
+                    required: true
+                }
+            }
+
+        });
+
+        function testSubmit(){
+            $('#login_form').ajaxSubmit({
+                beforeSubmit:  beforeSubmit,
+                success: function(data) {
+                    var obj = jQuery.parseJSON( data);
+
+                    //json eke enne typee kiyana ekekn error ekak da nadda kiyana eka
+
+                    if (obj.typee == 1){
+                        $("#feedbacklogin").hide().html(obj.resultt).slideDown("slow");
+                    }else{
+                        document.getElementById("login_form").reset();
+                        window.location.replace(obj.resultt);
+                    }
+
+                    //window.location.replace(data[2]);
+
+                    //alert("Thank you for your comment!" + data);
+                    //$('#feedback').html(data);
+
+                    //;
+
+                }
+
+            });
+            return false;
+
+         function beforeSubmit(){
+                if (!$('#login_form').valid()) {
+                    //alert("form is invalid");
+                    return false
+                }
+                //alert("form is valid");
+            }
+
+        }
+
+    </script>
+    <!--end of login -->
 
 <script>
 

@@ -1,4 +1,10 @@
 <?php
+//server fix
+ini_set('memory_limit', '256M');
+ini_set('max_execution_time', 600);
+
+
+
 require_once("configReader.php");
 require_once("subjectReader.php");
 require_once("tagReader.php");
@@ -105,7 +111,7 @@ if (move_uploaded_file($_FILES['FileInput1']['tmp_name'], $UploadDirectory1 . $N
     //  die('Success! File Uploaded.');
 
 } else {
-    die('error uploading File!');
+    die('error uploading File! #1');
 }
 //make folder to slides
 if(!file_exists($UploadDirectory2)){
@@ -121,7 +127,7 @@ foreach($_FILES['files']['name'] as $i=>$name) {
 //  die('Success! File Uploaded.');
 
     } else {
-        die('error uploading File!');
+        die('error uploading File! #1');
     }
 
 }

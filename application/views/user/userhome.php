@@ -303,7 +303,7 @@
                                     //$("#feedback").html(response.text);
                                     $.notify({
                                             icon: 'glyphicon glyphicon-star',
-                                            message: "Thank you your feedback! Massage not has send"},
+                                            message: "Thank you your feedback! Massage  has send"},
                                         {// settings
                                             type: "success",
                                             delay: 3000,
@@ -318,7 +318,7 @@
                                     //$("#feedback").html(response.text);
                                     $.notify({
                                             icon: 'glyphicon glyphicon-star',
-                                            message: "Thank you your feedback! Massage not has send"},
+                                            message: "Thank you your feedback! Massage  has not send"},
                                         {
                                             // settings
                                             type: "danger",
@@ -347,6 +347,3 @@
 
 </body>
 </html>
-
-
-

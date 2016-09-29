@@ -82,40 +82,6 @@
                             <div id="results">
 
                                 <img src="assets/images/ajax-loader.gif">  Loading...
-                                <!--
-                                <div class="col-lg-3 col-md-4 col-xs-6">
-                                    <a class="thumbnail" href="#">
-                                        <img class="img-responsive" src="assets/images/1.JPG" alt="">
-                                        <h4>Bubble sort</h4>
-                                        <h6 >basic configurations</h6>
-                                    </a>
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-xs-6">
-                                    <a class="thumbnail" href="#">
-                                        <img class="img-responsive" src="assets/images/2.JPG" alt="">
-                                        <h4>dijustra algorithm</h4>
-                                        <h6 >basic configurations</h6>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-xs-6">
-                                    <a class="thumbnail" href="#">
-                                        <img  class="img-responsive"  src="assets/images/3.JPG" alt="">
-                                        <h4 >IP configuration</h4>
-                                        <h6 >basic configurations</h6>
-                                    </a>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-xs-6">
-                                    <a class="thumbnail" href="#">
-                                        <img class="img-responsive" src="assets/images/4.JPG" alt="">
-                                        <h4>mySQL</h4>
-                                        <h6 >basic configurations</h6>
-                                    </a>
-                                </div>
-
-                                -->
-
-
 
 
                             </div> <!--end of result div -->
@@ -170,7 +136,7 @@
                     //json eke enne typee kiyana ekekn error ekak da nadda kiyana eka
 
                     if (obj.typee == 1){
-                        $("#feedback").hide().html(obj.resultt).slideDown("slow");
+                        $("#feedbacklogin").hide().html(obj.resultt).slideDown("slow");
                     }else{
                         document.getElementById("login_form").reset();
                         window.location.replace(obj.resultt);
@@ -268,5 +234,3 @@
 
 
 </html>
-
-
